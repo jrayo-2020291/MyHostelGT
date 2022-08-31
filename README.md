@@ -1,1 +1,1 @@
-# Proyecto-JEE-Grupo3
+# MyHostelGT
