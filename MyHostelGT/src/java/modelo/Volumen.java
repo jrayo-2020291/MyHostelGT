@@ -1,14 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelo;
 
-/**
- *
- * @author Familia_Rayo
- */
 public class Volumen {
-    
+    private int codigoVolumen;
+    private String volumen;
+
+    public Volumen() {
+    }
+
+    public Volumen(int codigoVolumen, String volumen) {
+        this.codigoVolumen = codigoVolumen;
+        this.volumen = volumen;
+    }
+
+    public int getCodigoVolumen() {
+        return codigoVolumen;
+    }
+
+    public void setCodigoVolumen(int codigoVolumen) {
+        this.codigoVolumen = codigoVolumen;
+    }
+
+    public String getVolumen() {
+        return volumen;
+    }
+
+    public void setVolumen(String volumen) {
+        this.volumen = volumen;
+    }
 }
