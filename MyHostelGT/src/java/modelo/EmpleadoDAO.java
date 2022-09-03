@@ -46,10 +46,10 @@ public class EmpleadoDAO {
           while(rs.next()){
               Empleado em = new Empleado();
               em.setAcceso(rs.getInt(1));
-              em.setNombreEmpleado(rs.getString(3));
-              em.setTelefono(rs.getString(4));
-              em.setUsuario(rs.getString(5));
-              em.setCodigotipoEmpleado(rs.getInt(6));
+              em.setNombreEmpleado(rs.getString(2));
+              em.setTelefono(rs.getString(3));
+              em.setUsuario(rs.getString(4));
+              em.setCodigotipoEmpleado(rs.getInt(5));
               listaEmpleado.add(em);
           }
       }catch(Exception e){
