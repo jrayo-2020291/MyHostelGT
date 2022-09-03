@@ -1,0 +1,50 @@
+body {font-family: Arial, Helvetica, sans-serif;
+   justify-content: center;
+   align-items: center;
+   heigh:665px;
+    --opacidad-negro: 0.5;
+    background: linear-gradient(rgba(0, 0, 0, var(--opacidad-negro)), 
+    rgba(0, 0, 0, var(--opacidad-negro))), url(../img/fondo.jpg) no-repeat center;
+    background-size: cover;
+    animation: movimiento 10s;
+}
+
+@keyframes movimiento {
+    from{
+        background-position: bottom left ;
+    }top{
+        background-position: top right;
+    }
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 45%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+
+
+
