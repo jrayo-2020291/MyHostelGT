@@ -1,7 +1,7 @@
 <%-- 
     Document   : Principal
     Created on : 30/08/2022, 07:53:21 PM
-    Author     : Grupo 3
+    Author     : Ian
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
