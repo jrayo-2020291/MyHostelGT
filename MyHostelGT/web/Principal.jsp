@@ -13,9 +13,8 @@
         <title>MyHosteGT</title>
     </head>
     <body>
-<<<<<<< HEAD
         <nav class="navbar navbar-expand-lg" style="background-color: #7e3e17">
-                <img src="Hotel_California.png" style="width: 90px; height: 65px;">
+                <img src="./img/Hotel_California.png" style="width: 90px; height: 65px;">
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item dropdown">
@@ -27,7 +26,7 @@
                       <li><a class="dropdown-item border border-secondary" href="#">Clasificacion</a></li>
                       <li><a class="dropdown-item border border-secondary" href="#">Volumen</a></li>
                       <li><a class="dropdown-item border border-secondary" href="#">Tipo Empleado</a></li>
-                      <li><a class="dropdown-item border border-secondary" href="#">Tipo Cliente</a></li>
+                      <li><a class="dropdown-item border border-secondary" href="Controlador?menu=TipoCliente" target="myFrame">Tipo Cliente</a></li>
                       <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Hotel" target="myFrame">Hotel</a></li>
                       <li><a class="dropdown-item border border-secondary" href="#">Cliente</a></li>
                       <li><a class="dropdown-item border border-secondary" href="#">Habitacion</a></li>
@@ -43,10 +42,10 @@
                 </button>
                     <div class="dropdown-menu text-center" aria-labellebdy="dropdownMenuButton">
                         <a class="dropdown-item" href="#">
-                            <img src="img/Ian.jpeg" alt="" width="50"/>
+                            <img src="./img/${usuario.getUsuario()}.png" alt="" width="50">
                         </a>  
                         <a class="dropdown-item" href="#">${usuario.getUsuario()}</a>
-                        <a class="dropdown-item" href="#">usuario@gmail.com</a>
+                        <a class="dropdown-item" href="#">${usuario.getUsuario()}@gmail.com</a>
                         <div class="dropdown-divider"></div>
                         <form action="Validar" method="POST">
                             <button name="accion" name="Salir" class="dropdown-item" href="#">Salir</button>
