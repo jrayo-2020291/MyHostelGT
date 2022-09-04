@@ -33,6 +33,7 @@
                         <tr>
                             <td>Codigo</td>
                             <td>Volumen</td>
+                            <td>Opciones</td>
                         </tr>
                     </thead>
                     <tbody>
