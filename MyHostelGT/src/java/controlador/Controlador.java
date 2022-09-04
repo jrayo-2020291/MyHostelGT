@@ -89,8 +89,8 @@ public class Controlador extends HttpServlet {
         }else if(menu.equals("Clasificacion")){
             switch(accion){
                 case "Listar":
-                    List listaClasificacion = clasificacionDAO.listar();
-                    request.setAttribute("clasificacion", listaClasificacion);
+//                    List listaClasificacion = clasificacionDAO.listar();
+//                    request.setAttribute("clasificacion", listaClasificacion);
                     break;
             }
             request.getRequestDispatcher("Clasificacion.jsp").forward(request, response);
