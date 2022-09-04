@@ -22,7 +22,7 @@
                         <div class='form-group'>
                             <label>Fecha de Entrada:</label>
                             <input type="date" name="txtFechaEntrada" class='form-control'>
-                            
+             
                         </div>
                         <div class='form-group'>
                             <label>Fecha de Salida:</label>

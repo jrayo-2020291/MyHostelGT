@@ -145,8 +145,8 @@ public class Controlador extends HttpServlet {
         }else if(menu.equals("Reservacion")){
             switch(accion){
                 case "Listar":
-//                    List listaReservacion = reservacionDAO.listar();
-//                    request.setAttribute("reservacion", listaReservacion);
+                    List listaReservacion = reservacionDAO.listar();
+                    request.setAttribute("reservacion", listaReservacion);
                     break;
             }
             request.getRequestDispatcher("Reservacion.jsp").forward(request, response);
