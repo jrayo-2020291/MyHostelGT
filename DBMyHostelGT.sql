@@ -105,6 +105,7 @@ Create table Reservacion(
 		references Empleado(acceso)
 );
 
+//*<<<<<<< Updated upstream
 /*---------------------------------------------------------------------------*/
 -- INSERTS
 /*---------------------------------------------------------------------------*/
@@ -298,7 +299,7 @@ insert into Habitacion (estado, codigoClasificacion, codigoHotel) values("Libre"
 
 insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ("2018521","Carlos Ramos","39049278","Cramos","8");
 insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ("2021117","José Vasquez","394750289","Jvasquez","8");
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ("2018523","Ian Monterroso","30472894","IMonterroso","8");
+insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ("2018253","Ian Monterroso","30472894","Imonterroso","8");
 insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ("2018457","Juan Montenegro","39047294","Jmontenegro","8");
 insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ("2018384","Jose Ramirez","04738294","Jramirez","8");
 insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ("2018317","Juan Morales","32084719","Jmorales","8");
@@ -307,6 +308,7 @@ insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmple
 insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ("2020291","Jose Rayo","77301835","Jrayo","9");
 insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ("2021120","Edgar Reyes","10364881","Ereyes","8");
 insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ("2021586","Jose Peralta","03746189","Jperalta","8");
+insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ("2018044","Pablo Vasquez","58962456","Pvasquez","8");
 
 /*---------------------------------------------------------------------------*/
 -- Empleados (Hoteles)
@@ -371,7 +373,5 @@ Select * from Cliente;
 Select * from Habitacion;
 Select * from Empleado;
 Select * from Reservacion;
-
-
 
 

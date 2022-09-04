@@ -11,6 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Empleado;
+import modelo.EmpleadoDAO;
 
 /**
  *
@@ -18,6 +20,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class Validar extends HttpServlet {
 
+    EmpleadoDAO empleadoDAO = new EmpleadoDAO();
+    Empleado empleado = new Empleado();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -70,14 +74,26 @@ public class Validar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String accion = request.getParameter("accion");
+        if(accion.equalsIgnoreCase("Ingresar")){
+            //Capturar el usuario y la contraseña
+            String user = request.getParameter("txtUser");
+            String pass = request.getParameter("txtPass");
+            empleado = empleadoDAO.validar(user, pass);
+            if(empleado.getUsuario()!= null){
+                request.setAttribute("usuario", empleado);
+                request.getRequestDispatcher("Controlador?menu=Principal").forward(request, response);
+                
+            }else{
+                //El RequestDispatcher hace un redireccionamiento a nuestra página index
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+                
+            }
+            
+        }else{
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";
