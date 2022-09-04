@@ -89,16 +89,16 @@ public class Controlador extends HttpServlet {
         }else if(menu.equals("Clasificacion")){
             switch(accion){
                 case "Listar":
-//                    List listaClasificacion = clasificacionDAO.listar();
-//                    request.setAttribute("clasificacion", listaClasificacion);
+                    List listaClasificacion = clasificacionDAO.listar();
+                    request.setAttribute("clasificacion", listaClasificacion);
                     break;
             }
             request.getRequestDispatcher("Clasificacion.jsp").forward(request, response);
         }else if(menu.equals("Cliente")){
             switch(accion){
                 case "Listar":
-//                    List listaCliente = clienteDAO.listar();
-//                    request.setAttribute("cliente", listaCliente);
+                    List listaCliente = clienteDAO.listar();
+                    request.setAttribute("cliente", listaCliente);
                     break;
             }
             request.getRequestDispatcher("Cliente.jsp").forward(request, response);
@@ -113,32 +113,32 @@ public class Controlador extends HttpServlet {
         }else if(menu.equals("Habitacion")){
             switch(accion){
                 case "Listar":
-//                    List listaHabitacion = habitacionDAO.listar();
-//                    request.setAttribute("habitacion", listaHabitacion);
+                    List listaHabitacion = habitacionDAO.listar();
+                    request.setAttribute("habitacion", listaHabitacion);
                     break;
             }
             request.getRequestDispatcher("Habitacion.jsp").forward(request, response);
         }else if(menu.equals("Hotel")){
             switch(accion){
                 case "Listar":
-//                    List listaHotel = hotelDAO.listar();
-//                    request.setAttribute("hotel", listaHotel);
+                    List listaHotel = hotelDAO.listar();
+                    request.setAttribute("hotel", listaHotel);
                     break;
             }
             request.getRequestDispatcher("Hotel.jsp").forward(request, response);
         }else if(menu.equals("MetodoDePago")){
             switch(accion){
                 case "Listar":
-//                    List listaMetodoDePago = metodoDePagoDAO.listar();
-//                    request.setAttribute("metodoDePago", listaMetodoDePago);
+                    List listaMetodoDePago = metodoDePagoDAO.listar();
+                    request.setAttribute("metodoDePago", listaMetodoDePago);
                     break;
             }
             request.getRequestDispatcher("MetodoDePago.jsp").forward(request, response);
         }else if(menu.equals("Region")){
             switch(accion){
                 case "Listar":
-//                    List listaRegion = regionDAO.listar();
-//                    request.setAttribute("region", listaRegion);
+                    List listaRegion = regionDAO.listar();
+                    request.setAttribute("region", listaRegion);
                     break;
             }
             request.getRequestDispatcher("Region.jsp").forward(request, response);
@@ -161,16 +161,16 @@ public class Controlador extends HttpServlet {
         }else if(menu.equals("TipoEmpleado")){
             switch(accion){
                 case "Listar":
-//                    List listaTipoEmpleado = tipoEmpleadoDAO.listar();
-//                    request.setAttribute("tipoEmpleado", listaTipoEmpleado);
+                    List listaTipoEmpleado = tipoEmpleadoDAO.listar();
+                    request.setAttribute("tipoEmpleado", listaTipoEmpleado);
                     break;
             }
             request.getRequestDispatcher("TipoEmpleado.jsp").forward(request, response);
         }else if(menu.equals("Volumen")){
             switch(accion){
                 case "Listar":
-//                    List listaVolumen = volumenDAO.listar();
-//                    request.setAttribute("volumen", listaVolumen);
+                    List listaVolumen = volumenDAO.listar();
+                    request.setAttribute("volumen", listaVolumen);
                     break;
             }
             request.getRequestDispatcher("Volumen.jsp").forward(request, response);
