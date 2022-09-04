@@ -13,7 +13,7 @@ public class VolumenDAO {
     PreparedStatement ps;
     ResultSet rs;
 
-    public List Listar(){
+    public List listar(){
         String sql = "Select * from volumen";
         List <Volumen> listaVolumen = new ArrayList<>();
         try{

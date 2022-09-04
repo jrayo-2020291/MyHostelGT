@@ -23,15 +23,15 @@
                     </a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item border border-secondary" href="Controlador?menu=MetodoDePago&accion=Listar" target="myFrame">Metodo de Pago</a></li>
-                      <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Clasificacion&accion=Listar">Clasificacion</a></li>
-                      <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Volumen&accion=Listar">Volumen</a></li>
-                      <li><a class="dropdown-item border border-secondary" href="Controlador?menu=TipoEmpleado&accion=Listar">Tipo Empleado</a></li>
+                      <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Clasificacion&accion=Listar" target="myFrame">Clasificacion</a></li>
+                      <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Volumen&accion=Listar" target="myFrame">Volumen</a></li>
+                      <li><a class="dropdown-item border border-secondary" href="Controlador?menu=TipoEmpleado&accion=Listar" target="myFrame">Tipo Empleado</a></li>
                       <li><a class="dropdown-item border border-secondary" href="Controlador?menu=TipoCliente&accion=Listar" target="myFrame">Tipo Cliente</a></li>
                       <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Hotel&accion=Listar" target="myFrame">Hotel</a></li>
-                      <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Cliente&accion=Listar">Cliente</a></li>
-                      <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Habitacion&accion=Listar">Habitacion</a></li>
-                      <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Empleado&accion=Listar">Empleado</a></li>
-                      <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Reservacion&accion=Listar">Reservacion</a></li>
+                      <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Cliente&accion=Listar" target="myFrame">Cliente</a></li>
+                      <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Habitacion&accion=Listar" target="myFrame">Habitacion</a></li>
+                      <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Empleado&accion=Listar" target="myFrame">Empleado</a></li>
+                      <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Reservacion&accion=Listar" target="myFrame">Reservacion</a></li>
                     </ul>
                   </li>
                 </ul>
