@@ -23,11 +23,7 @@
                             <input type="text" name="txtDescripcion" class="form-control">
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-info">
-<<<<<<< HEAD
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
-=======
-                        <input type="submit" name="accion" value="Actualizar" class="btn btn-success"
->>>>>>> imonterroso-2018253
                     </form>
                 </div>
             </div>
