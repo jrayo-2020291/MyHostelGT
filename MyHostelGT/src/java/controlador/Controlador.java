@@ -105,8 +105,8 @@ public class Controlador extends HttpServlet {
         }else if(menu.equals("Empleado")){
             switch(accion){
                 case "Listar":
-//                    List listaEmpleado = empleadoDAO.listar();
-//                    request.setAttribute("empleado", listaEmpleado);
+                    List listaEmpleado = empleadoDAO.listar();
+                    request.setAttribute("empleado", listaEmpleado);
                     break;
             }
             request.getRequestDispatcher("Empleado.jsp").forward(request, response);
@@ -145,8 +145,8 @@ public class Controlador extends HttpServlet {
         }else if(menu.equals("Reservacion")){
             switch(accion){
                 case "Listar":
-//                    List listaReservacion = reservacionDAO.listar();
-//                    request.setAttribute("reservacion", listaReservacion);
+                    List listaReservacion = reservacionDAO.listar();
+                    request.setAttribute("reservacion", listaReservacion);
                     break;
             }
             request.getRequestDispatcher("Reservacion.jsp").forward(request, response);
