@@ -299,7 +299,7 @@ insert into Habitacion (estado, codigoClasificacion, codigoHotel) values("Libre"
 
 insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ("2018521","Carlos Ramos","39049278","Cramos","8");
 insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ("2021117","José Vasquez","394750289","Jvasquez","8");
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ("2018523","Ian Monterroso","30472894","Imonterroso","8");
+insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ("2018253","Ian Monterroso","30472894","Imonterroso","8");
 insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ("2018457","Juan Montenegro","39047294","Jmontenegro","8");
 insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ("2018384","Jose Ramirez","04738294","Jramirez","8");
 insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ("2018317","Juan Morales","32084719","Jmorales","8");
@@ -373,7 +373,5 @@ Select * from Cliente;
 Select * from Habitacion;
 Select * from Empleado;
 Select * from Reservacion;
-
-
 
 

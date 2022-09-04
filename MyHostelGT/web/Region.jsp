@@ -17,7 +17,7 @@
         <div class="d-flex" >
             <div class="card col-sm-4">
                 <div class="card-body">
-                    <form >
+                    <form>
                         <div class="form-group">
                             <label>Código Región</label>
                             <input type="text" name="txtCodigoRegion" class="form-control">

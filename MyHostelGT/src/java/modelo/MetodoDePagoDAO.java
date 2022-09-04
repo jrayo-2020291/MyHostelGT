@@ -15,7 +15,7 @@ public class MetodoDePagoDAO {
     
     public List listar(){
         String sql = "select * from metodoDePago";
-        List<MetodoDePago> listaMetodoDePago = new ArrayList<>();
+        List <MetodoDePago> listaMetodoDePago = new ArrayList<>();
         try{
             con = cn.Conexion();
             ps = con.prepareStatement(sql);

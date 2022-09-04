@@ -18,19 +18,17 @@
             <div class="card col-sm-4">
                 <div class="card-body">
                     <form action="Controlador?menu=MetodoDePago" method="POST">
-                        <div class="form-group"> 
-                            <label>Codigo:</label>
-                            <input type="text" name="txtCodigoMetodoPago" class="form-control">
-                        </div>
                         <div class="form-group">
                             <label>Descripcion:</label>
                             <input type="text" name="txtDescripcion" class="form-control">
                         </div>
+                        <input type="submit" name="accion" value="Agregar" class="btn btn-info">
+                        <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     </form>
                 </div>
             </div>
             <div class="col-sm-8">
-                <table class="table table-hover-">
+                <table class="table table-hover text-center">
                     <thead>
                         <tr>
                             <td>CODIGO</td>
@@ -39,10 +37,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="metodopago" items="${metodopago}">
+                        <c:forEach var="metodoDePago" items="${metodoDePago}">
                             <tr>
-                                <td>${hotel.getCodigoMetodoPago()}</td>
-                                <td>${hotel.getDescripcion()}</td>
+                                <td>${metodoDePago.getCodigoMetodoPago()}</td>
+                                <td>${metodoDePago.getDescripcion()}</td>
                                 <td>
                                     <a class="btn btn-warning" href="">Editar</a>
                                     <a class="btn btn-danger" href="">Eliminar</a>
