@@ -16,7 +16,7 @@ public class TipoClienteDAO {
     
         public List listar(){
         String sql = "select * from tipocliente";
-        List<TipoCliente> tipoCliente = new ArrayList<>();
+        List<TipoCliente> listaTipoCliente = new ArrayList<>();
         try{
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
@@ -25,12 +25,12 @@ public class TipoClienteDAO {
                 TipoCliente tc = new TipoCliente();
                 tc.setCodigoTipoCliente(rs.getInt(1));
                 tc.setDescripcion(rs.getString(2));
-                tc.add(tipoCliente);
+                listaTipoCliente.add(tc);
             }
         }catch(Exception e){
             e.printStackTrace();
         }
-        return tipoCliente;        
+        return listaTipoCliente;        
     }
     
 }
