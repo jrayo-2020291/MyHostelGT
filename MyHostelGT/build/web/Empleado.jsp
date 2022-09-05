@@ -11,55 +11,59 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
         <title>Vista Empleados</title>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
                     <form action="Controlador?menu=Empleado" method="POST">
-                        <div class="form-group">
-                            <label>Acceso:</label>
-                            <input type="text" name="txtAcceso" class="form-control">
+                        <div class="form-floating mb-3"> 
+                            <input type="text" name="txtAcceso" class="form-control" id="floatingInputGroup1" placeholder="Acceso">
+                            <label for="floatingInputGroup1">Acceso</label>
                         </div>
-                        <div class="form-group">
-                            <label>Nombres:</label>
-                            <input type="text" name="txtNombreEmpleado" class="form-control">
+                        <div class="form-floating mb-3"> 
+                            <input type="text" name="txtNombreEmpleado" class="form-control" id="floatingInputGroup1" placeholder="Nombre">
+                            <label for="floatingInputGroup1">Nombre</label>
                         </div>
-                        <div class="form-group">
-                            <label>Teléfono:</label>
-                            <input type="text" name="txtTelefono" class="form-control">
+                        <div class="form-floating mb-3"> 
+                            <input type="text" name="txtTelefono" class="form-control" id="floatingInputGroup1" placeholder="Telefono">
+                            <label for="floatingInputGroup1">Telefono</label>
                         </div>
-                        <div class="form-group">
-                            <label>Usuario:</label>
-                            <input type="text" name="txtUsuario" class="form-control">
+                        <div class="form-floating mb-3"> 
+                            <input type="text" name="txtUsuario" class="form-control" id="floatingInputGroup1" placeholder="Usuario">
+                            <label for="floatingInputGroup1">Usuario</label>
                         </div>
-                        <div class="form-group">
-                            <label>Tipo Empleado:</label>
-                            <input type="text" name="txtUsuario" class="form-control">
+                        <div class="form-floating mb-3"> 
+                            <input type="text" name="txtTipoEmpleado" class="form-control" id="floatingInputGroup1" placeholder="Tipo Empleado">
+                            <label for="floatingInputGroup1">Tipo Empleado</label>
                         </div>
-                        <input type="submit" name="accion" value="Agregar" class="btn btn-info" >
+                        <input type="submit" name="accion" value="Agregar" class="btn btn-primary" >
                         <input type ="submit" name="accion" value="Actualizar" class="btn btn-success">
                     </form>
                 </div>
             </div>
             <div class="col-sm-8">
-                <table class="table table-hover">
+                <table class="table table-hover table-bordered table-striped text-center">
+                    <caption>Lista de Empleados</caption>
                     <thead>
                         <tr>
-                            <td>ACCESO</td>
-                            <td>NOMBRES</td>
-                            <td>TELEFONO</td>
-                            <td>USUARIO</td>
-                            <td>TIPO</td>
-                            <td>ACCIONES</td>   
+                            <th scope="col">ACCESO</th>
+                            <th scope="col">NOMBRES</th>
+                            <th scope="col">TELEFONO</th>
+                            <th scope="col">USUARIO</th>
+                            <th scope="col">TIPO</th>
+                            <th scope="col">ACCIONES</th>   
                         </tr>
                     </thead>
                     <tbody>
                        
                         <c:forEach var="empleado" items="${empleado}">
                             <tr>
-                                <td>${empleado.getAcceso()}</td>
+                                <th scope="row">${empleado.getAcceso()}</th>
                                 <td>${empleado.getNombreEmpleado()}</td>
                                 <td>${empleado.getTelefono()}</td>
                                 <td>${empleado.getUsuario()}</td>

@@ -11,39 +11,43 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        <title>JSP Page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+        <title>Vista Region</title>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
         <div class="d-flex" >
             <div class="card col-sm-4">
                 <div class="card-body">
                     <form>
-                        <div class="form-group">
-                            <label>Código Región</label>
-                            <input type="text" name="txtCodigoRegion" class="form-control">
+                        <div class="form-floating mb-3"> 
+                            <input type="text" name="txtCodigo" class="form-control" id="floatingInputGroup1" placeholder="Codigo">
+                            <label for="floatingInputGroup1">Codigo</label>
                         </div>
-                        <div class="form-group">
-                            <label>Región</label>
-                            <input type="text" name="txtRegion" class="form-control">
+                        <div class="form-floating mb-3"> 
+                            <input type="text" name="txtRegion" class="form-control" id="floatingInputGroup1" placeholder="Region">
+                            <label for="floatingInputGroup1">Region</label>
                         </div>
-                        <input type="submit" name="accion" value="Agregar" class="btn btn-info">
+                        <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-success"
                     </form>
                 </div>
             </div>
             <div class="col-sm-8">
-                <table class="table table-hover">
+                <table class="table table-hover table-bordered table-striped text-center">
+                    <caption>Lista de Regiones</caption>
                     <thead>
                         <tr>
-                            <td>Código</td>
-                            <td>Región</td>
-                            <td>Acciones</td>
+                            <th scope="col">Codigo</th>
+                            <th scope="col">Región</th>
+                            <th scope="col">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         <c:forEach var="region" items="${region}">
                             <tr>
-                                <td>${region.getCodigoRegion()}</td>
+                                <th scope="row">${region.getCodigoRegion()}</th>
                                 <td>${region.getRegion()}</td>
                                 <td>
                                     <a class="btn btn-warning"> Editar</a>
