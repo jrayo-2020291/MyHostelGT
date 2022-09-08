@@ -28,7 +28,7 @@
                       <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Region&accion=Listar" target="myFrame">Region</a></li>
                       <li><a class="dropdown-item border border-secondary" href="Controlador?menu=TipoEmpleado&accion=Listar" target="myFrame">Tipo Empleado</a></li>
                       <li><a class="dropdown-item border border-secondary" href="Controlador?menu=TipoCliente&accion=Listar" target="myFrame">Tipo Cliente</a></li>
-                      <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Hotel&accion=Listar" target="myFrame">Hotel</a></li>
+                      <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Sucursal&accion=Listar" target="myFrame">Sucursal</a></li>
                       <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Cliente&accion=Listar" target="myFrame">Cliente</a></li>
                       <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Habitacion&accion=Listar" target="myFrame">Habitacion</a></li>
                       <li><a class="dropdown-item border border-secondary" href="Controlador?menu=Empleado&accion=Listar" target="myFrame">Empleado</a></li>

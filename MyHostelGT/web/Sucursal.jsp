@@ -13,25 +13,25 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-        <title>Vista Hotel</title>
+        <title>Vista Sucursal</title>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body class="p-4 m-0 border-0 bd-example">
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
-                    <form action="Controlador?menu=Hotel" method="POST">
+                    <form action="Controlador?menu=Sucursal" method="POST">
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtCodigo" class="form-control" id="floatingInputGroup1" placeholder="Codigo">
-                            <label for="floatingInputGroup1">Codigo</label>
-                        </div>
-                        <div class="form-floating mb-3"> 
-                            <input type="text" name="txtNombreHotel" class="form-control" id="floatingInputGroup1" placeholder="Nombre Hotel">
-                            <label for="floatingInputGroup1">Nombre Hotel</label>
+                            <input type="text" name="txtDescripcion" class="form-control" id="floatingInputGroup1" placeholder="Descripcion">
+                            <label for="floatingInputGroup1">Descripcion</label>
                         </div>
                         <div class="form-floating mb-3"> 
                             <input type="text" name="txtPuntuacion" class="form-control" id="floatingInputGroup1" placeholder="Puntuacion">
                             <label for="floatingInputGroup1">Puntuacion</label>
+                        </div>
+                        <div class="form-floating mb-3"> 
+                            <input type="text" name="txtDireccion" class="form-control" id="floatingInputGroup1" placeholder="Direccion">
+                            <label for="floatingInputGroup1">Direccion</label>
                         </div>
                         <div class="form-floating mb-3"> 
                             <input type="text" name="txtRegion" class="form-control" id="floatingInputGroup1" placeholder="Region">
@@ -48,25 +48,27 @@
             </div>
             <div class="col-sm-8 ">
                 <table class="table table-hover table-bordered table-striped text-center">
-                    <caption>Lista de Hoteles</caption>
+                    <caption>Lista de Sucursales</caption>
                     <thead>
                         <tr>
                             <th scope="col">CODIGO</th>
-                            <th scope="col">NOMBRE</th>
+                            <th scope="col">DESCRIPCION</th>
                             <th scope="col">PUNTUACION</th>
+                            <th scope="col">DIRECCION</th>
                             <th scope="col">REGION</th>
                             <th scope="col">VOLUMEN</th>
                             <th scope="col">OPCIONES</th>
                         </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="hotel" items="${hotel}">
+                    <c:forEach var="sucursal" items="${sucursal}">
                             <tr>
-                                <th class=""scope="row">${hotel.getCodigoHotel()}</th>
-                                <td>${hotel.getNombreHotel()}</td>
-                                <td>${hotel.getPuntuacion()}</td>
-                                <td>${hotel.getCodigoRegion()}</td>
-                                <td>${hotel.getCodigoVolumen()}</td>
+                                <th class=""scope="row">${sucursal.getCodigoSucursal()}</th>
+                                <td>${sucursal.getDescripcion()}</td>
+                                <td>${sucursal.getPuntuacion()}</td>
+                                <td>${sucursal.getDireccion()}</td>
+                                <td>${sucursal.getCodigoRegion()}</td>
+                                <td>${sucursal.getCodigoVolumen()}</td>
                                 <td>
                                     <a class="btn btn-warning" href="">Editar</a>
                                     <a class="btn btn-danger" href="">Eliminar</a>

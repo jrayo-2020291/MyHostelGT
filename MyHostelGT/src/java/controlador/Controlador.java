@@ -14,8 +14,8 @@ import modelo.Empleado;
 import modelo.EmpleadoDAO;
 import modelo.Habitacion;
 import modelo.HabitacionDAO;
-import modelo.Hotel;
-import modelo.HotelDAO;
+import modelo.Sucursal;
+import modelo.SucursalDAO;
 import modelo.MetodoDePago;
 import modelo.MetodoDePagoDAO;
 import modelo.Region;
@@ -48,8 +48,8 @@ public class Controlador extends HttpServlet {
     Habitacion habitacion = new Habitacion();
     HabitacionDAO habitacionDAO = new HabitacionDAO();
     
-    Hotel hotel = new Hotel();
-    HotelDAO hotelDAO = new HotelDAO();
+    Sucursal sucursal = new Sucursal();
+    SucursalDAO sucursalDAO = new SucursalDAO();
     
     MetodoDePago metodoDePago = new MetodoDePago();
     MetodoDePagoDAO metodoDePagoDAO = new MetodoDePagoDAO();
@@ -118,14 +118,14 @@ public class Controlador extends HttpServlet {
                     break;
             }
             request.getRequestDispatcher("Habitacion.jsp").forward(request, response);
-        }else if(menu.equals("Hotel")){
+        }else if(menu.equals("Sucursal")){
             switch(accion){
                 case "Listar":
-                    List listaHotel = hotelDAO.listar();
-                    request.setAttribute("hotel", listaHotel);
+                    List listaSucursal = sucursalDAO.listar();
+                    request.setAttribute("sucursal", listaSucursal);
                     break;
             }
-            request.getRequestDispatcher("Hotel.jsp").forward(request, response);
+            request.getRequestDispatcher("Sucursal.jsp").forward(request, response);
         }else if(menu.equals("MetodoDePago")){
             switch(accion){
                 case "Listar":
