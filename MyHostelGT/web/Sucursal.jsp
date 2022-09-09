@@ -22,27 +22,27 @@
                 <div class="card-body">
                     <form action="Controlador?menu=Sucursal" method="POST">
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtDescripcion" class="form-control" id="floatingInputGroup1" placeholder="Descripcion">
+                            <input type="text" name="txtDescripcion" value ="${sucursal.getDescripcion()}" class="form-control" id="floatingInputGroup1" placeholder="Descripcion">
                             <label for="floatingInputGroup1">Descripcion</label>
                         </div>
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtPuntuacion" class="form-control" id="floatingInputGroup1" placeholder="Puntuacion">
+                            <input type="text" name="txtPuntuacion" value ="${sucursal.getPuntuacion()}" class="form-control" id="floatingInputGroup1" placeholder="Puntuacion">
                             <label for="floatingInputGroup1">Puntuacion</label>
                         </div>
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtDireccion" class="form-control" id="floatingInputGroup1" placeholder="Direccion">
+                            <input type="text" name="txtDireccion" value ="${sucursal.getDireccion()}" class="form-control" id="floatingInputGroup1" placeholder="Direccion">
                             <label for="floatingInputGroup1">Direccion</label>
                         </div>
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtRegion" class="form-control" id="floatingInputGroup1" placeholder="Region">
+                            <input type="text" name="txtRegion" value ="${sucursal.getCodigoRegion()}" class="form-control" id="floatingInputGroup1" placeholder="Region">
                             <label for="floatingInputGroup1">Region</label>
                         </div>
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtVolumen" class="form-control" id="floatingInputGroup1" placeholder="Volumen">
+                            <input type="text" name="txtVolumen" value ="${sucursal.getCodigoVolumen()}" class="form-control" id="floatingInputGroup1" placeholder="Volumen">
                             <label for="floatingInputGroup1">Volumen</label>
                         </div>
-                        <input type="submit" name="action" value="Agregar" class="btn btn-primary ">
-                        <input type="submit" name="action" value="Actualizar" class="btn btn-success">
+                        <input type="submit" name="accion" value="Agregar" class="btn btn-primary ">
+                        <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     </form>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <c:forEach var="sucursal" items="${sucursal}">
+                    <c:forEach var="sucursal" items="${sucursales}">
                             <tr>
                                 <th class=""scope="row">${sucursal.getCodigoSucursal()}</th>
                                 <td>${sucursal.getDescripcion()}</td>
@@ -70,13 +70,12 @@
                                 <td>${sucursal.getCodigoRegion()}</td>
                                 <td>${sucursal.getCodigoVolumen()}</td>
                                 <td>
-                                    <a class="btn btn-warning" href="">Editar</a>
-                                    <a class="btn btn-danger" href="">Eliminar</a>
+                                    <a class="btn btn-warning" href="Controlador?menu=Sucursal&accion=Editar&codigoSucursal=${sucursal.getCodigoSucursal()}">Editar</a>
+                                    <a class="btn btn-danger " href="Controlador?menu=Sucursal&accion=Eliminar&codigoSucursal=${sucursal.getCodigoSucursal()}">Eliminar</a>
                                 </td>
                             </tr>
                         </c:forEach>
-                    </tbody>
-                    
+                    </tbody> 
                 </table>
             </div>
         </div>

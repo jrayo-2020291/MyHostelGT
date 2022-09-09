@@ -3,16 +3,16 @@ package modelo;
 public class Sucursal {
     private int codigoSucursal;
     private String descripcion;
-    private int puntuacion;
+    private String puntuacion;
     private String direccion;
-    private int codigoRegion;
-    private int codigoVolumen;
+    private String codigoRegion;
+    private String codigoVolumen;
 
     public Sucursal() {
         
     }
 
-    public Sucursal(int codigoSucursal, String descripcion, int puntuacion, String direccion, int codigoRegion, int codigoVolumen) {
+    public Sucursal(int codigoSucursal, String descripcion, String puntuacion, String direccion, String codigoRegion, String codigoVolumen) {
         this.codigoSucursal = codigoSucursal;
         this.descripcion = descripcion;
         this.puntuacion = puntuacion;
@@ -37,11 +37,11 @@ public class Sucursal {
         this.descripcion = descripcion;
     }
 
-    public int getPuntuacion() {
+    public String getPuntuacion() {
         return puntuacion;
     }
 
-    public void setPuntuacion(int puntuacion) {
+    public void setPuntuacion(String puntuacion) {
         this.puntuacion = puntuacion;
     }
 
@@ -53,24 +53,21 @@ public class Sucursal {
         this.direccion = direccion;
     }
 
-    public int getCodigoRegion() {
+    public String getCodigoRegion() {
         return codigoRegion;
     }
 
-    public void setCodigoRegion(int codigoRegion) {
+    public void setCodigoRegion(String codigoRegion) {
         this.codigoRegion = codigoRegion;
     }
 
-    public int getCodigoVolumen() {
+    public String getCodigoVolumen() {
         return codigoVolumen;
     }
 
-    public void setCodigoVolumen(int codigoVolumen) {
+    public void setCodigoVolumen(String codigoVolumen) {
         this.codigoVolumen = codigoVolumen;
     }
-    
-    
-    
 }
 
     

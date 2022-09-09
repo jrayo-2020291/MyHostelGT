@@ -36,6 +36,8 @@ import modelo.VolumenDAO;
 
 public class Controlador extends HttpServlet {
     
+    int codSucursal;
+    
     Clasificacion clasificacion = new Clasificacion();
     ClasificacionDAO clasificacionDAO = new ClasificacionDAO();
     
@@ -50,7 +52,7 @@ public class Controlador extends HttpServlet {
     
     Sucursal sucursal = new Sucursal();
     SucursalDAO sucursalDAO = new SucursalDAO();
-    
+       
     MetodoDePago metodoDePago = new MetodoDePago();
     MetodoDePagoDAO metodoDePagoDAO = new MetodoDePagoDAO();
     
@@ -121,8 +123,48 @@ public class Controlador extends HttpServlet {
         }else if(menu.equals("Sucursal")){
             switch(accion){
                 case "Listar":
-                    List listaSucursal = sucursalDAO.listar();
-                    request.setAttribute("sucursal", listaSucursal);
+                    List listaSucursales = sucursalDAO.listar();
+                    request.setAttribute("sucursales", listaSucursales);
+                    break;
+                case "Agregar":
+                    String descripcion = request.getParameter("txtDescripcion");
+                    String puntuacion = request.getParameter("txtPuntuacion");
+                    String direccion = request.getParameter("txtDireccion");
+                    String SUregion = request.getParameter("txtRegion");
+                    String SUvolumen = request.getParameter("txtVolumen");
+                    sucursal.setDescripcion(descripcion);
+                    sucursal.setPuntuacion(puntuacion);
+                    sucursal.setDireccion(direccion);
+                    sucursal.setCodigoRegion(SUregion);
+                    sucursal.setCodigoVolumen(SUvolumen);
+                    sucursalDAO.agregar(sucursal);
+                    request.getRequestDispatcher("Controlador?menu=Sucursal&accion=Listar").forward(request, response);
+                    break;
+                case "Editar":
+                    codSucursal = Integer.parseInt(request.getParameter("codigoSucursal"));
+                    Sucursal s = sucursalDAO.listarCodigoSucursal(codSucursal);
+                    request.setAttribute("sucursal", s);
+                    request.getRequestDispatcher("Controlador?menu=Sucursal&accion=Listar").forward(request, response);
+                    break;
+                case"Actualizar":
+                    String descripcionSuc = request.getParameter("txtDescripcion");
+                    String puntuacionSuc = request.getParameter("txtPuntuacion");
+                    String direccionSuc = request.getParameter("txtDireccion");
+                    String SUregionSuc = request.getParameter("txtRegion");
+                    String SUvolumenSuc = request.getParameter("txtVolumen");
+                    sucursal.setDescripcion(descripcionSuc);
+                    sucursal.setPuntuacion(puntuacionSuc);
+                    sucursal.setDireccion(direccionSuc);
+                    sucursal.setCodigoRegion(SUregionSuc);
+                    sucursal.setCodigoVolumen(SUvolumenSuc);
+                    sucursal.setCodigoSucursal(codSucursal);
+                    sucursalDAO.actualizar(sucursal);
+                    request.getRequestDispatcher("Controlador?menu=Sucursal&accion=Listar").forward(request, response);
+                    break;
+                case"Eliminar":
+                    codSucursal = Integer.parseInt(request.getParameter("codigoSucursal"));
+                    sucursalDAO.eliminar(codSucursal);
+                    request.getRequestDispatcher("Controlador?menu=Sucursal&accion=Listar").forward(request, response);
                     break;
             }
             request.getRequestDispatcher("Sucursal.jsp").forward(request, response);
