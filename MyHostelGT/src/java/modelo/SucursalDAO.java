@@ -25,10 +25,10 @@ public class SucursalDAO {
                 Sucursal su = new Sucursal();
                 su.setCodigoSucursal(rs.getInt(1));
                 su.setDescripcion(rs.getString(2));
-                su.setPuntuacion(rs.getString(3));
+                su.setPuntuacion(rs.getInt(3));
                 su.setDireccion(rs.getString(4));
-                su.setCodigoRegion(rs.getString(5));
-                su.setCodigoVolumen(rs.getString(6));
+                su.setCodigoRegion(rs.getInt(5));
+                su.setCodigoVolumen(rs.getInt(6));
                 listaSucursales.add(su);
             }
         }catch(Exception e){
@@ -43,10 +43,10 @@ public class SucursalDAO {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
             ps.setString(1, suc.getDescripcion());
-            ps.setString(2, suc.getPuntuacion());
+            ps.setInt(2, suc.getPuntuacion());
             ps.setString(3, suc.getDireccion());
-            ps.setString(4, suc.getCodigoRegion());
-            ps.setString(5, suc.getCodigoVolumen());
+            ps.setInt(4, suc.getCodigoRegion());
+            ps.setInt(5, suc.getCodigoVolumen());
             ps.executeUpdate();
         }catch(Exception e){
             e.printStackTrace();
@@ -63,10 +63,10 @@ public class SucursalDAO {
             rs = ps.executeQuery();
             while (rs.next()){
                 suc.setDescripcion(rs.getString(2));
-                suc.setPuntuacion(rs.getString(3));
+                suc.setPuntuacion(rs.getInt(3));
                 suc.setDireccion(rs.getString(4));
-                suc.setCodigoRegion(rs.getString(5));
-                suc.setCodigoVolumen(rs.getString(6));  
+                suc.setCodigoRegion(rs.getInt(5));
+                suc.setCodigoVolumen(rs.getInt(6));  
             }
         }catch(Exception e){
             e.printStackTrace();
@@ -80,10 +80,10 @@ public class SucursalDAO {
             con = cn.Conexion();
             ps = con.prepareStatement(sql);
             ps.setString(1, suc.getDescripcion());
-            ps.setString(2, suc.getPuntuacion());
+            ps.setInt(2, suc.getPuntuacion());
             ps.setString(3, suc.getDireccion());
-            ps.setString(4, suc.getCodigoRegion());
-            ps.setString(5, suc.getCodigoVolumen());
+            ps.setInt(4, suc.getCodigoRegion());
+            ps.setInt(5, suc.getCodigoVolumen());
             ps.setInt(6, suc.getCodigoSucursal());
             ps.executeUpdate();
         }catch(Exception e){

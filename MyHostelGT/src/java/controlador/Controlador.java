@@ -128,10 +128,10 @@ public class Controlador extends HttpServlet {
                     break;
                 case "Agregar":
                     String descripcion = request.getParameter("txtDescripcion");
-                    String puntuacion = request.getParameter("txtPuntuacion");
+                    int puntuacion = Integer.parseInt(request.getParameter("txtPuntuacion"));
                     String direccion = request.getParameter("txtDireccion");
-                    String SUregion = request.getParameter("txtRegion");
-                    String SUvolumen = request.getParameter("txtVolumen");
+                    int SUregion = Integer.parseInt(request.getParameter("txtRegion"));
+                    int SUvolumen = Integer.parseInt(request.getParameter("txtVolumen"));
                     sucursal.setDescripcion(descripcion);
                     sucursal.setPuntuacion(puntuacion);
                     sucursal.setDireccion(direccion);
@@ -148,10 +148,10 @@ public class Controlador extends HttpServlet {
                     break;
                 case"Actualizar":
                     String descripcionSuc = request.getParameter("txtDescripcion");
-                    String puntuacionSuc = request.getParameter("txtPuntuacion");
+                    int puntuacionSuc = Integer.parseInt(request.getParameter("txtPuntuacion"));
                     String direccionSuc = request.getParameter("txtDireccion");
-                    String SUregionSuc = request.getParameter("txtRegion");
-                    String SUvolumenSuc = request.getParameter("txtVolumen");
+                    int SUregionSuc = Integer.parseInt(request.getParameter("txtRegion"));
+                    int SUvolumenSuc = Integer.parseInt(request.getParameter("txtVolumen"));
                     sucursal.setDescripcion(descripcionSuc);
                     sucursal.setPuntuacion(puntuacionSuc);
                     sucursal.setDireccion(direccionSuc);

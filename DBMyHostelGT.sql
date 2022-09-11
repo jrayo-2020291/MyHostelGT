@@ -190,15 +190,15 @@ insert into TipoCliente (descripcion) values('Platino ++');
 /*---------------------------------------------------------------------------*/
 
 insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('Hotel Realeza','4', '6A Avenida 61-25, Cdad. de Guatemala','1','3'); 
-insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('Glamho Hotel','3', '6A Avenida 61-25, Cdad. de Guatemala','1','2');
-insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('Passarela Hotel','5', '6A Avenida 61-25, Cdad. de Guatemala','2','1');
-insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('Oz Resort','4', '6A Avenida 61-25, Cdad. de Guatemala','3','3');
-insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('Queen Hotel','4', '6A Avenida 61-25, Cdad. de Guatemala','4','4');
-insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('Hotel el Bosque','2', '6A Avenida 61-25, Cdad. de Guatemala','5','1');
-insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('Tea Tree Hotel','4', '6A Avenida 61-25, Cdad. de Guatemala','6','1');
-insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('Candel Resort','5', '6A Avenida 61-25, Cdad. de Guatemala','7','2');
-insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('EcoTel','3', '6A Avenida 61-25, Cdad. de Guatemala','8','3');
-insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('Trufa Resort','4', '6A Avenida 61-25, Cdad. de Guatemala','9','5');
+insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('Glamho Hotel','3', '6A Avenida 61-25, Zona 4 Mixco','1','2');
+insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('Passarela Hotel','5', 'calle principal esperanza zona 12','2','1');
+insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('Oz Resort','4', '2a Calle 713, Cobán','3','3');
+insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('Queen Hotel','4', 'Tikal National Park, Flores, Tikal','4','4');
+insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('Hotel el Bosque','2', 'Calle Union 20, Flores','5','1');
+insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('Tea Tree Hotel','4', '9 Avenida 6-54 Zona 4','6','1');
+insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('Candel Resort','5', '9a calle 2-25, San Marcos','7','2');
+insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('EcoTel','3', 'X58W+74J, San Marcos','8','3');
+insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVolumen) values('Trufa Resort','4', '4ta. Avenida, callejón zona 3','9','5');
 
 /*---------------------------------------------------------------------------*/
 -- Clientes
