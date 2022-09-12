@@ -22,6 +22,7 @@ public class RegionDAO {
         Connection con;
         PreparedStatement ps;
         ResultSet rs;
+        int resp;
         
         public List listar(){
         
@@ -41,6 +42,71 @@ public class RegionDAO {
                 e.printStackTrace();
             }
             return listaRegion;
+        }
+        
+        //Metodo Agregar
+        
+        public int agregar(Region regi){
+            
+            String sql = "insert into Region(region) values(?)";
+            
+            try{
+                con = cn.Conexion();
+                ps = con.prepareStatement(sql);
+                ps.setString(1, regi.getRegion());
+                ps.executeUpdate();
+                
+            }catch(Exception e){
+                e.printStackTrace();
+            } 
+            return resp;
+        }
+        
+        //Buscar codigo
+        
+        public Region listarCodigoRegion(int id){
+            Region regi = new Region();
+            String sql = "select * from Region where codigoRegion = "+id;
+            try{
+                con = cn.Conexion();
+                ps = con.prepareStatement(sql);
+                rs = ps.executeQuery();
+                while(rs.next()){
+                    regi.setRegion(rs.getString(2));
+                }
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+            return regi;
+        }
+        
+        //Editar
+        
+        public int actualizar(Region regi){
+            
+            String sql = "update Region set region = ? where codigoRegion = ?";
+            try{
+                con = cn.Conexion();
+                ps = con.prepareStatement(sql);
+                ps.setString(1, regi.getRegion());
+                ps.setInt(2, regi.getCodigoRegion());
+                ps.executeUpdate();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+            
+            return resp;
+        }
+        
+        public void eliminar(int id){
+            String sql = "delete from Region where codigoRegion = "+id;
+            try{
+                con = cn.Conexion();
+                ps = con.prepareStatement(sql);
+                ps.executeUpdate();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
         }
         
     

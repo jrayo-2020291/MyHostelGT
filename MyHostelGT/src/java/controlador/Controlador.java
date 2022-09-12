@@ -72,6 +72,7 @@ public class Controlador extends HttpServlet {
     Volumen volumen = new Volumen();
     VolumenDAO volumenDAO = new VolumenDAO();
     int codVolumen;
+    int codRegion;
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -234,7 +235,31 @@ public class Controlador extends HttpServlet {
             switch(accion){
                 case "Listar":
                     List listaRegion = regionDAO.listar();
-                    request.setAttribute("region", listaRegion);
+                    request.setAttribute("regiones", listaRegion);
+                    break;
+                case "Agregar":
+                    String regi = request.getParameter("txtRegion");
+                    region.setRegion(regi);
+                    regionDAO.agregar(region);
+                    request.getRequestDispatcher("Controlador?menu=Region&accion=Listar").forward(request, response);
+                    break;
+                case "Editar":
+                    codRegion = Integer.parseInt(request.getParameter("codigoRegion"));
+                    Region rg = regionDAO.listarCodigoRegion(codRegion);
+                    request.setAttribute("region", rg);
+                    request.getRequestDispatcher("Controlador?menu=Region&accion=Listar").forward(request, response);
+                    break;
+                case "Actualizar":
+                    String regiRegion = request.getParameter("txtRegion");
+                    region.setRegion(regiRegion);
+                    region.setCodigoRegion(codRegion);
+                    regionDAO.actualizar(region);
+                    request.getRequestDispatcher("Controlador?menu=Region&accion=Listar").forward(request, response);
+                    break;
+                case "Eliminar":
+                    codRegion = Integer.parseInt(request.getParameter("codigoRegion"));
+                    regionDAO.eliminar(codRegion);
+                    request.getRequestDispatcher("Controlador?menu=Region&accion=Listar").forward(request, response);
                     break;
             }
             request.getRequestDispatcher("Region.jsp").forward(request, response);
