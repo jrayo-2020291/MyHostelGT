@@ -10,7 +10,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
         <title>Pagina Empleado</title>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     </head>
     <body>
@@ -18,31 +21,32 @@
             <div class="card col-sm-4">
                 <div class="card-body">
                     <form action="Controlador?menu=TipoEmpleado" method="POST">
-                        <div class="form-group">
-                            <label>Codigo Tipo Empleado</label>
-                            <input type="text" name="txtcodigoTipoEmpleado" class="form-control">
+                        <div class="form-floating mb-3"> 
+                            <input type="text" name="txtCodigo" class="form-control" id="floatingInputGroup1" placeholder="Codigo">
+                            <label for="floatingInputGroup1">Codigo</label>
                         </div>
-                        <div class="form-group">
-                            <label>Descripcion</label>
-                            <input type="text" name="txtdescripcion" class="form-control">
+                        <div class="form-floating mb-3"> 
+                            <input type="text" name="txtCDescripcion" class="form-control" id="floatingInputGroup1" placeholder="Descripcion">
+                            <label for="floatingInputGroup1">Descripcion</label>
                         </div>
-                        <input type="submit" name="accion" value="Agregar" class="btn btn-info">
+                        <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     </form>
                 </div>
             </div>
             <div class='col-sm-8'>
-                <table class='table table-hover'>
+                <table class="table table-hover table-bordered table-striped text-center">
+                    <caption>Lista de Tipos de Empleado</caption>
                     <thead>
                         <tr>
-                            <td>CODIGO</td>
-                            <td>Descripcion</td>
+                            <th scope="col">CODIGO</th>
+                            <th scope="col">Descripcion</th>
                         </tr>
                     </thead>
                     <tbody>
                         <c:forEach var="tipoEmpleado" items="${tipoEmpleado}">   
                         <tr>
-                            <td>${tipoEmpleado.getCodigoTipoEmpleado()}</td>
+                            <th scope="row">${tipoEmpleado.getCodigoTipoEmpleado()}</th>
                             <td>${tipoEmpleado.getDescripcion()}</td>
                             <td>
                                 <a class='btn btn-warning' href="">Editar</a>
