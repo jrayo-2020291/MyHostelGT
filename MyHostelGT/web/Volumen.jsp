@@ -22,11 +22,7 @@
                 <div class="card-body">
                     <form action="Controlador?menu=Volumen" method="POST">
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtCodigo" class="form-control" id="floatingInputGroup1" placeholder="Codigo">
-                            <label for="floatingInputGroup1">Codigo</label>
-                        </div>
-                        <div class="form-floating mb-3"> 
-                            <input type="text" name="txtVolumen" class="form-control" id="floatingInputGroup1" placeholder="Volumen">
+                            <input type="text" name="txtVolumen" class="form-control" id="floatingInputGroup1" placeholder="Volumen" value ="${Volumen.getVolumen()}">
                             <label for="floatingInputGroup1">Volumen</label>
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
@@ -50,8 +46,8 @@
                             <th scope="row">${volumen.getCodigoVolumen()}</th>
                             <td>${volumen.getVolumen()}</td>
                             <td>
-                                <a class="btn btn-warning" href="">Editar</a>
-                                <a class="btn btn-danger" href="">Eliminar</a>
+                                <a class="btn btn-warning" href="Controlador?menu=Volumen&accion=Editar&codigoVolumen=${volumen.getCodigoVolumen()}">Editar</a>
+                                <a class="btn btn-danger" href="Controlador?menu=Volumen&accion=Eliminar&codigoVolumen=${volumen.getCodigoVolumen()}">Eliminar</a>
                             </td>
                         </tr>
                     </c:forEach>

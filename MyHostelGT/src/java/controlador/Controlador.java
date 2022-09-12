@@ -71,6 +71,7 @@ public class Controlador extends HttpServlet {
     
     Volumen volumen = new Volumen();
     VolumenDAO volumenDAO = new VolumenDAO();
+    int codVolumen;
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -263,12 +264,35 @@ public class Controlador extends HttpServlet {
             request.getRequestDispatcher("TipoEmpleado.jsp").forward(request, response);
         }else if(menu.equals("Volumen")){
             switch(accion){
-                case "Listar":
-                    List listaVolumen = volumenDAO.listar();
-                    request.setAttribute("volumen", listaVolumen);
-                    break;
-            }
-            request.getRequestDispatcher("Volumen.jsp").forward(request, response);
+                    case "Listar":
+                            List listaVolumen = volumenDAO.listar();
+                            request.setAttribute("volumen", listaVolumen);
+                            break;
+                    case "Agregar":
+                            String volumenes = request.getParameter("txtVolumen");
+                            volumen.setVolumen(volumenes);
+                            volumenDAO.agregar(volumen);
+                            request.getRequestDispatcher("Controlador?menu=Volumen&accion=Listar").forward(request, response);
+                            break;
+                    case "Editar":
+                            codVolumen = Integer.parseInt(request.getParameter("codigoVolumen"));
+                            Volumen v = volumenDAO.listarCodigoVolumen(codVolumen);
+                            request.setAttribute("Volumen", v);
+                            request.getRequestDispatcher("Controlador?menu=Volumen&accion=Listar").forward(request, response);
+                            break;
+                    case "Actualizar":
+                            String Vol = request.getParameter("txtVolumen");
+                            volumen.setVolumen(Vol);
+                            volumen.setCodigoVolumen(codVolumen);
+                            volumenDAO.actualizar(volumen);
+                            request.getRequestDispatcher("Controlador?menu=Volumen&accion=Listar").forward(request, response);
+                            break;
+                    case "Eliminar":
+                            codVolumen = Integer.parseInt(request.getParameter("codigoVolumen"));
+                            volumenDAO.eliminar(codVolumen);
+                            request.getRequestDispatcher("Controlador?menu=Volumen&accion=Listar").forward(request, response);
+                            break;
+            }request.getRequestDispatcher("Volumen.jsp").forward(request, response);
         }else if(menu.equals("Home")){
             request.getRequestDispatcher("Principal.jsp").forward(request, response);
         }
