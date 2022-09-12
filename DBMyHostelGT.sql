@@ -55,8 +55,12 @@ Create table Sucursal(
 
 Create table Cliente(
 	ID int not null auto_increment,
-    nombreCliente varchar(200) not null,
+    nombreCliente varchar(100) not null,
+    apellidoCliente varchar(100) not null,
     telefono varchar(10) not null,
+    DPI varchar (13) not null,
+    direccion varchar(150) not null,
+    correo varchar(100) not null,    
     codigoMetodoPago int not null,
     codigoTipoCliente int not null,
     primary key PK_ID (ID),
@@ -204,40 +208,40 @@ insert into Sucursal (descripcion, puntuacion, direccion, codigoRegion, codigoVo
 -- Clientes
 /*---------------------------------------------------------------------------*/
 
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Santiago Hernandez','36235568','2','1');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Mateo Garcia','84523754','2','2');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Matias Martinez','78121385','4','2');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Sebastian Lopez','97116136','5','3');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Diego Gonzalez','65524422','6','1');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Nicolas Perez','72896069','1','5');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Luis Rodriguez','49537371','1','4');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Samuel Sanchez','80097161','4','1');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Steven Ramirez','23551001','7','2');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Alejandro Cruz','66758087','7','2');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Emilio Flores','66758087','3','3');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Javier Gomez','68335152','2','3');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Jose Morales','11977809','2','3');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Daniel Vazquez','73434944','5','2');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Pablo Reyes','29626793','1','1');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Luis Jimenez','32943225','3','5');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Samuel Torres','42257565','7','3');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Gabriel Diaz','78208944','4','2');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Sofia Gutierrez','25186747','4','6');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Isabella Ruiz','21541938','3','1');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Valentina Mendoza','11860943','2','1');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Chiao Aguilar','71431069','1','2');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Camila Ortiz','31297023','1','3');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Valeria Moreno','97487947','2','3');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Emma Castillo','62931644','2','4');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Luciana Romero','61289664','3','6');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Victoria Alvarez','53263391','5','3');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Luisa Mendez','72610802','6','1');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Martina Chavez','84962708','6','1');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Ximena Rivera','13650371','7','2');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Ana Juarez','42598362','2','1');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Flor Ramos','83981139','6','4');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Cecy Domiguez','15233467','6','5');
-insert into Cliente (nombreCliente, telefono, CodigoMetodoPago, codigoTipoCliente) values ('Ivanna Herrera','72596262','6','3');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Santiago',' Hernandez','36235568','1248597685123','Zona 12, Guatemala','sHernandez68@gmail.com','2','1');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Mateo', 'Garcia','84523754','9875630124050','Zona 7, Mixco', 'mGarcia@gmail.com', '2','2');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Matias','Martinez','78121385', '9852037461204', 'Zona 8, Guatemala', 'mMartinez@gmail.com', '4','2');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Sebastian','Lopez','97116136','7546301204580','Zona 2, Cobán','sLopez@gmail.com','5','3');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Diego', 'Gonzalez','65524422','7564120314850', 'Zona 5, Salamá', 'dGonzalez@gmail.com', '6','1');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Nicolas' ,'Perez','72896069','7842001369540','Zona 3, Rabinal','nPerez@gmail.com' ,'1','5');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Luis', 'Rodriguez','49537371', '5432018702513', 'Zona 5, Cobán', 'lRodriguez@gmail.com', '1','4');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Samuel','Sanchez','80097161','4763021584630', 'Zona 1, Guatemala','sSanchez@gmail.com','4','1');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Steven', 'Ramirez','23551001','9564302106540','Zona 13, Chimaltenango','sRamirez@gmail.com','7','2');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Alejandro', 'Cruz','66758087','4620134895760','Zona 4, Patzun','aCruz@gmail.com','7','2');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Emilio', 'Flores','66758087','4615052789654','Zona 8, Acatenango', 'eFlores@gmail.com','3','3');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Javier', 'Gomez','68335152', '3120150789620','Zona 6, Flores(Petén)','jGomez@gmail.com','2','3');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Jose', 'Morales','11977809', '7945123065028','Zona 8, Guastatoya', 'jMorales@gmail.com','2','3');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Daniel','Vazquez','73434944','7852032016450','Zona 9, Mixco','dVazquez@gmail.com','5','2');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Pablo', 'Reyes','29626793','7856230145621','Zona 2, Guatemala','pReyes@gmail.com','1','1');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Luis', 'Jimenez','32943225', '3021549862054','Zona 5, Santa Crúz del Quiché','lJimenez@gmail.com', '3','5');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Samuel', 'Torres','42257565','6530214782030','Zona 12, Guatemala','sTorres@gmail.com','7','3');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Gabriel', 'Diaz','78208944','4521309875360','Zona 3, Patzun','gDiaz@gmail.com','4','2');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Sofia', 'Gutierrez','25186747','6320158463203','Zona 1, Chimaltenango','sGutierrez@gmail.com','4','6');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Isabella', 'Ruiz','21541938','2031504890500','Zona 6, Flores(Petén)','iRuiz@gmail.com','3','1');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Valentina','Mendoza','11860943','9875630215015','Zona 6, Guastatoya','vMendoza@gmail.com','2','1');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Chiao', 'Aguilar','71431069','6203512030125','Zona 1, Mixco','cAguilar@gmail.com','1','2');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Camila', 'Ortiz','31297023', '8865330147522','Zona 9, Escuintla','cOrtiz@gmail.com','1','3');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Valeria', 'Moreno','97487947','3320116877520','Zona 10, Siquinalá','vMoreno@gmail.com','2','3');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Emma', 'Castillo','62931644','5600213559780','Zona 3, Palin','eCastillo@gmail.com','2','4');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Luciana', 'Romero','61289664','9786320145200','Zona 15, Huehuetenango','lRomero@gmail.com','3','6');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Victoria', 'Alvarez','53263391','3115466200951','Zona 1, Puerto Barrios','vAlvarez@gmail.com','5','3');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Luisa', 'Mendez','72610802','6321006684520','Zona 2, El Estor','lMendez@gmail.com','6','1');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Martina','Chavez','84962708','9562300147596','Zona 15, El Estor','mChavez@gmail.com','6','1');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Ximena', 'Rivera','13650371','4652003258945','Zona 3, Jalapa','xRivera@gmail.com','7','2');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Ana', 'Juarez','42598362','5588463302100','Zona 3, Salcajá','aJuarez@gmail.com','2','1');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Flor', 'Ramos','83981139','2315006849510','Zona 3, Salcajá','fRamos@gmail.com','6','4');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Cecy', 'Domiguez','15233467','3215694800175','Zona 5, Guatemala','cDominguez@gmail.com','6','5');
+insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, correo, CodigoMetodoPago, codigoTipoCliente) values ('Ivanna', 'Herrera','72596262','3656920015742','Zona 10, Champerico','iHerrera@gmail.com','6','3');
 
 /*---------------------------------------------------------------------------*/
 -- Habitaciones

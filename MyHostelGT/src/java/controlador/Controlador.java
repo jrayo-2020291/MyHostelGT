@@ -37,7 +37,8 @@ import modelo.VolumenDAO;
 public class Controlador extends HttpServlet {
     
     int codSucursal;
-    
+    int idCliente;
+
     Clasificacion clasificacion = new Clasificacion();
     ClasificacionDAO clasificacionDAO = new ClasificacionDAO();
     
@@ -100,7 +101,59 @@ public class Controlador extends HttpServlet {
             switch(accion){
                 case "Listar":
                     List listaCliente = clienteDAO.listar();
-                    request.setAttribute("cliente", listaCliente);
+                    request.setAttribute("clientes", listaCliente);
+                    break;
+                    case "Agregar":
+                    String clNombre = request.getParameter("txtNombreClientes");
+                    String clApellido = request.getParameter("txtApellidoClientes");
+                    String clTelefono = request.getParameter("txtTelefono");
+                    String clDPI = request.getParameter("txtDPI");
+                    String clDireccion = request.getParameter("txtDireccion");
+                    String clCorreo = request.getParameter("txtCorreo");
+                    int clMetodoPago = Integer.parseInt(request.getParameter("txtMetodoDePago")) ;
+                    int clTipoCliente = Integer.parseInt(request.getParameter("txtTipoDeCliente")) ;
+                    cliente.setNombreCliente(clNombre);
+                    cliente.setApellidoCliente(clApellido);
+                    cliente.setTelefono(clTelefono);
+                    cliente.setDPI(clDPI);
+                    cliente.setDireccion(clDireccion);
+                    cliente.setCorreo(clCorreo);
+                    cliente.setCodigoMetodoPago(clMetodoPago);
+                    cliente.setCodigoTipoCliente(clTipoCliente);
+                    clienteDAO.agregar(cliente);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    break;
+                case "Editar":
+                    idCliente = Integer.parseInt(request.getParameter("ID"));
+                    Cliente c = clienteDAO.listarIDCliente(idCliente);
+                    request.setAttribute("cliente", c);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    break;
+                case "Actualizar":
+                    String nombCl = request.getParameter("txtNombreClientes");
+                    String apeCL = request.getParameter("txtApellidoClientes");
+                    String telCl = request.getParameter("txtTelefono");
+                    String dpiCl = request.getParameter("txtDPI");
+                    String direcCl = request.getParameter("txtDireccion");
+                    String correoCl = request.getParameter("txtCorreo");
+                    int metodoPagoCl = Integer.parseInt(request.getParameter("txtMetodoDePago")) ;
+                    int tipoClienteCl = Integer.parseInt(request.getParameter("txtTipoDeCliente")) ;
+                    cliente.setNombreCliente(nombCl);
+                    cliente.setApellidoCliente(apeCL);
+                    cliente.setTelefono(telCl);
+                    cliente.setDPI(dpiCl);
+                    cliente.setDireccion(direcCl);
+                    cliente.setCorreo(correoCl);
+                    cliente.setCodigoMetodoPago(metodoPagoCl);
+                    cliente.setCodigoTipoCliente(tipoClienteCl);
+                    cliente.setID(idCliente);
+                    clienteDAO.actualizar(cliente);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
+                    break;
+                case "Eliminar":
+                    idCliente = Integer.parseInt(request.getParameter("ID"));
+                    clienteDAO.eliminar(idCliente);
+                    request.getRequestDispatcher("Controlador?menu=Cliente&accion=Listar").forward(request, response);
                     break;
             }
             request.getRequestDispatcher("Cliente.jsp").forward(request, response);
