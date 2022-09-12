@@ -12,17 +12,25 @@ package modelo;
 public class Cliente {
     private int ID;
     private String nombreCliente;
+    private String apellidoCliente;
     private String telefono;
+    private String DPI;
+    private String direccion;
+    private String correo;
     private int codigoMetodoPago;
     private int codigoTipoCliente;
 
     public Cliente() {
     }
 
-    public Cliente(int ID, String nombreCliente, String telefono, int codigoMetodoPago, int codigoTipoCliente) {
+    public Cliente(int ID, String nombreCliente, String apellidoCliente, String telefono, String DPI, String direccion, String correo, int codigoMetodoPago, int codigoTipoCliente) {
         this.ID = ID;
         this.nombreCliente = nombreCliente;
+        this.apellidoCliente = apellidoCliente;
         this.telefono = telefono;
+        this.DPI = DPI;
+        this.direccion = direccion;
+        this.correo = correo;
         this.codigoMetodoPago = codigoMetodoPago;
         this.codigoTipoCliente = codigoTipoCliente;
     }
@@ -43,6 +51,14 @@ public class Cliente {
         this.nombreCliente = nombreCliente;
     }
 
+    public String getApellidoCliente() {
+        return apellidoCliente;
+    }
+
+    public void setApellidoCliente(String apellidoCliente) {
+        this.apellidoCliente = apellidoCliente;
+    }
+    
     public String getTelefono() {
         return telefono;
     }
@@ -51,6 +67,30 @@ public class Cliente {
         this.telefono = telefono;
     }
 
+    public String getDPI() {
+        return DPI;
+    }
+
+    public void setDPI(String DPI) {
+        this.DPI = DPI;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }    
+    
     public int getCodigoMetodoPago() {
         return codigoMetodoPago;
     }
