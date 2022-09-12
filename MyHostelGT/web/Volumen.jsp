@@ -11,34 +11,43 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
         <title>Vista Volumen</title>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
                     <form action="Controlador?menu=Volumen" method="POST">
-                        <div class="form-group">
-                            <label>Volumen:</label>
-                            <input type="text" name="txtVolumen" class="form-control">
+                        <div class="form-floating mb-3"> 
+                            <input type="text" name="txtCodigo" class="form-control" id="floatingInputGroup1" placeholder="Codigo">
+                            <label for="floatingInputGroup1">Codigo</label>
                         </div>
-                        <input type="submit" name="accion" value="Agregar" class="btn btn-info">
+                        <div class="form-floating mb-3"> 
+                            <input type="text" name="txtVolumen" class="form-control" id="floatingInputGroup1" placeholder="Volumen">
+                            <label for="floatingInputGroup1">Volumen</label>
+                        </div>
+                        <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
                         <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     </form> 
                 </div>
             </div>
             <div class="col-sm-8">
-                <table class="table table-hover text-center">
+                <table class="table table-hover table-bordered table-striped text-center">
+                    <caption>Lista de Volumenes</caption>
                     <thead>
                         <tr>
-                            <td>Codigo</td>
-                            <td>Volumen</td>
+                            <th scope="col">Codigo</th>
+                            <th scope="col">Volumen</th>
+                            <th scope="col">Opciones</th>
                         </tr>
                     </thead>
                     <tbody>
                     <c:forEach var="volumen" items="${volumen}">
                         <tr>
-                            <td>${volumen.getCodigoVolumen()}</td>
+                            <th scope="row">${volumen.getCodigoVolumen()}</th>
                             <td>${volumen.getVolumen()}</td>
                             <td>
                                 <a class="btn btn-warning" href="">Editar</a>

@@ -1,14 +1,32 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelo;
 
-/**
- *
- * @author Grupo 3
- */
 public class MetodoDePago {
+    private int codigoMetodoPago;
+    private String descripcion;
+
+    public MetodoDePago() {
+    }
+
+    public MetodoDePago(int codigoMetodoPago, String descripcion) {
+        this.codigoMetodoPago = codigoMetodoPago;
+        this.descripcion = descripcion;
+    }
+
+    public int getCodigoMetodoPago() {
+        return codigoMetodoPago;
+    }
+
+    public void setCodigoMetodoPago(int codigoMetodoPago) {
+        this.codigoMetodoPago = codigoMetodoPago;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    
     
 }
