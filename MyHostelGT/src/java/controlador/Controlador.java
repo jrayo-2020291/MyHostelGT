@@ -76,6 +76,7 @@ public class Controlador extends HttpServlet {
     VolumenDAO volumenDAO = new VolumenDAO();
     int codVolumen;
     int codRegion;
+    int codClasificacion;
     
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -99,6 +100,30 @@ public class Controlador extends HttpServlet {
                 case "Listar":
                     List listaClasificacion = clasificacionDAO.listar();
                     request.setAttribute("clasificacion", listaClasificacion);
+                    break;
+                case "Agregar":
+                    String categoria = request.getParameter("txtCategoria");
+                    clasificacion.setCategoria(categoria);
+                    clasificacionDAO.agregar(clasificacion);
+                    request.getRequestDispatcher("Controlador?menu=Clasificacion&accion=Listar").forward(request, response);
+                    break;
+                case "Editar":
+                    codClasificacion = Integer.parseInt(request.getParameter("codigoClasificacion"));
+                    Clasificacion c = clasificacionDAO.listarCodigoClasificacion(codClasificacion);
+                    request.setAttribute("Clasificacion", c);
+                    request.getRequestDispatcher("Controlador?menu=Clasificacion&accion=Listar").forward(request, response);
+                    break;
+                case"Actualizar":
+                    String categoriaClas = request.getParameter("txtCategoria");
+                    clasificacion.setCategoria(categoriaClas);
+                    clasificacion.setCodigoClasificacion(codClasificacion);
+                    clasificacionDAO.actualizar(clasificacion);
+                    request.getRequestDispatcher("Controlador?menu=Clasificacion&accion=Listar").forward(request, response);
+                    break;
+                case"Eliminar":
+                    codClasificacion = Integer.parseInt(request.getParameter("codigoClasificacion"));
+                    clasificacionDAO.eliminar(codClasificacion);
+                    request.getRequestDispatcher("Controlador?menu=Clasificacion&accion=Listar").forward(request, response);
                     break;
             }
             request.getRequestDispatcher("Clasificacion.jsp").forward(request, response);

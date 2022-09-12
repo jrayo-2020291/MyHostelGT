@@ -22,16 +22,12 @@
                 <div class="card-body">
                     <form action="Controlador?menu=Clasificacion" method="POST">
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtCodigoClasificacion" class="form-control" id="floatingInputGroup1" placeholder="Codigo">
-                            <label for="floatingInputGroup1">Codigo</label>
-                        </div>
-                        <div class="form-floating mb-3"> 
-                            <input type="text" name="txtCategoria" class="form-control" id="floatingInputGroup1" placeholder="Categoria">
+                            <input type="text" value="${Clasificacion.getCategoria()}" name="txtCategoria" class="form-control" id="floatingInputGroup1" placeholder="Categoria">
                             <label for="floatingInputGroup1">Categoria</label>
                         </div>
-                        <input type="submit" name="action" value="Agregar" class="btn btn-primary">
-                        <input type="submit" name="action" value="Actualizar" class="btn btn-success ">
-                    </form>
+                        <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
+                        <input type="submit" name="accion" value="Actualizar" class="btn btn-success "> 
+                   </form>
                 </div>
             </div>
             <div class="col-sm-8">
@@ -47,11 +43,11 @@
                     <tbody>
                         <c:forEach var="clasificacion" items="${clasificacion}">
                             <tr>
-                                <th scope="row">${clasificacion.getCodigoClasificacion()}</th>
+                                <td scope="row">${clasificacion.getCodigoClasificacion()}</td>
                                 <td>${clasificacion.getCategoria()}</td>
                                 <td>
-                                    <a class="btn btn-warning" href="">Editar</a>
-                                    <a class="btn btn-danger" href="">Eliminar</a>
+                                    <a class="btn btn-warning" href="Controlador?menu=Clasificacion&accion=Editar&codigoClasificacion=${clasificacion.getCodigoClasificacion()}">Editar</a>
+                                    <a class="btn btn-danger"  href="Controlador?menu=Clasificacion&accion=Eliminar&codigoClasificacion=${clasificacion.getCodigoClasificacion()}">Eliminar</a>
                                 </td>
                             </tr>
                         </c:forEach>
