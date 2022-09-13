@@ -22,11 +22,8 @@
                 <div class="card-body">
                     <form action="Controlador?menu=MetodoDePago" method="POST">
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtCodigo" class="form-control" id="floatingInputGroup1" placeholder="Codigo">
-                            <label for="floatingInputGroup1">Codigo</label>
-                        </div>
-                        <div class="form-floating mb-3"> 
-                            <input type="text" name="txtDescripcion" class="form-control" id="floatingInputGroup1" placeholder="Descripcion">
+                            <!-- dentro del value tambien empieza con minuscula y se lo cambie a mayuscula -->
+                            <input type="text" name="txtDescripcion" value ="${MetodoDePago.getDescripcion()}" class="form-control" id="floatingInputGroup1" placeholder="Descripcion">
                             <label for="floatingInputGroup1">Descripcion</label>
                         </div>
                         <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
@@ -50,8 +47,8 @@
                                 <th scope="row">${metodoDePago.getCodigoMetodoPago()}</th>
                                 <td>${metodoDePago.getDescripcion()}</td>
                                 <td>
-                                    <a class="btn btn-warning" href="">Editar</a>
-                                    <a class="btn btn-danger" href="">Eliminar</a>
+                                    <a class="btn btn-warning" href="Controlador?menu=MetodoDePago&accion=Editar&codigoMetodoPago=${metodoDePago.getCodigoMetodoPago()}">Editar</a>
+                                    <a class="btn btn-danger" href="Controlador?menu=MetodoDePago&accion=Eliminar&codigoMetodoPago=${metodoDePago.getCodigoMetodoPago()}">Eliminar</a>
                                 </td>
                             </tr>
                         </c:forEach>
