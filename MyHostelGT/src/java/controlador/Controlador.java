@@ -42,6 +42,7 @@ public class Controlador extends HttpServlet {
     int codE;
     int codMetoPa;
     int codReservacion;
+    int codTipoEmpleado;
 
     Clasificacion clasificacion = new Clasificacion();
     ClasificacionDAO clasificacionDAO = new ClasificacionDAO();
@@ -461,6 +462,30 @@ public class Controlador extends HttpServlet {
                 case "Listar":
                     List listaTipoEmpleado = tipoEmpleadoDAO.listar();
                     request.setAttribute("tipoEmpleado", listaTipoEmpleado);
+                    break;
+                case "Agregar":
+                    String Desc = request.getParameter("txtDescripcion");
+                    tipoEmpleado.setDescripcion(Desc);
+                    tipoEmpleadoDAO.agregar(tipoEmpleado);
+                    request.getRequestDispatcher("Controlador?menu=TipoEmpleado&accion=Listar").forward(request, response);
+                    break;
+                case "Editar":
+                    codTipoEmpleado = Integer.parseInt(request.getParameter("codigoTipoEmpleado"));
+                    TipoEmpleado tipoEmple = tipoEmpleadoDAO.listaCodigoTipoEmpleado(codTipoEmpleado);
+                    request.setAttribute("TipoEmpleado", tipoEmple);
+                    request.getRequestDispatcher("Controlador?menu=TipoEmpleado&accion=Listar").forward(request, response);
+                    break;
+                case"Actualizar":
+                    String descrip = request.getParameter("txtDescripcion");
+                    tipoEmpleado.setDescripcion(descrip);
+                    tipoEmpleado.setCodigoTipoEmpleado(codTipoEmpleado);
+                    tipoEmpleadoDAO.actualizar(tipoEmpleado);
+                    request.getRequestDispatcher("Controlador?menu=TipoEmpleado&accion=Listar").forward(request, response);
+                    break;
+                case "Eliminar":
+                    codTipoEmpleado = Integer.parseInt(request.getParameter("codigoTipoEmpleado"));
+                    tipoEmpleadoDAO.eliminar(codTipoEmpleado);
+                    request.getRequestDispatcher("Controlador?menu=TipoEmpleado&accion=Listar").forward(request, response);
                     break;
             }
             request.getRequestDispatcher("TipoEmpleado.jsp").forward(request, response);
