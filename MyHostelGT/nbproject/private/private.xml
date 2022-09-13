@@ -4,10 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/git2022/MyHostelGT/MyHostelGT/src/java/controlador/Controlador.java</file>
-            <file>file:/C:/git2022/MyHostelGT/MyHostelGT/src/java/modelo/SucursalDAO.java</file>
-            <file>file:/C:/git2022/MyHostelGT/MyHostelGT/src/java/config/Conexion.java</file>
-            <file>file:/C:/git2022/MyHostelGT/MyHostelGT/web/Sucursal.jsp</file>
-            <file>file:/C:/git2022/MyHostelGT/MyHostelGT/src/java/modelo/Sucursal.java</file>
+            <file>file:/C:/git2022/MyHostelGT/MyHostelGT/src/java/modelo/TipoClienteDAO.java</file>
+            <file>file:/C:/git2022/MyHostelGT/MyHostelGT/web/TipoCliente.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -20,17 +20,13 @@
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
-                    <form action="Controlador?menu=Clasificacion" method="POST">
+                    <form action="Controlador?menu=TipoCliente" method="POST">
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtCodigo" class="form-control" id="floatingInputGroup1" placeholder="Codigo">
-                            <label for="floatingInputGroup1">Codigo</label>
-                        </div>
-                        <div class="form-floating mb-3"> 
-                            <input type="text" name="txtRegion" class="form-control" id="floatingInputGroup1" placeholder="Descripcion">
+                            <input type="text" name="txtDescripcionTipoCliente" value="${TipoCliente.getDescripcion()}" class="form-control" id="floatingInputGroup1" placeholder="Descripcion">
                             <label for="floatingInputGroup1">Descripcion</label>
                         </div>
-                        <input type="submit" name="action" value="Agregar" class="btn btn-primary">
-                        <input type="submit" name="action" value="Actualizar" class="btn btn-success">
+                        <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
+                        <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     </form>
                 </div>
             </div>
@@ -50,8 +46,8 @@
                                 <th scope="row">${tipoCliente.getCodigoTipoCliente()}</th>
                                 <td>${tipoCliente.getDescripcion()}</td>
                                 <td>
-                                    <a class="btn btn-warning" href="">Editar</a>
-                                    <a class="btn btn-danger" href="">Eliminar</a>
+                                    <a class="btn btn-warning" href="Controlador?menu=TipoCliente&accion=Editar&codigoTipoCliente=${tipoCliente.getCodigoTipoCliente()}">Editar</a>
+                                    <a class="btn btn-danger" href="Controlador?menu=TipoCliente&accion=Eliminar&codigoTipoCliente=${tipoCliente.getCodigoTipoCliente()}">Eliminar</a>
                                 </td>
                             </tr>
                         </c:forEach>

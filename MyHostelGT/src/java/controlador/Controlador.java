@@ -38,6 +38,7 @@ public class Controlador extends HttpServlet {
     
     int codSucursal;
     int idCliente;
+    int codTipoCliente;
 
     Clasificacion clasificacion = new Clasificacion();
     ClasificacionDAO clasificacionDAO = new ClasificacionDAO();
@@ -276,6 +277,30 @@ public class Controlador extends HttpServlet {
                 case "Listar":
                     List listaTipoCliente = tipoClienteDAO.listar();
                     request.setAttribute("tipoCliente", listaTipoCliente);
+                    break;
+                case "Agregar":
+                    String dscrptc = request.getParameter("txtDescripcionTipoCliente");
+                    tipoCliente.setDescripcion(dscrptc);
+                    tipoClienteDAO.agregar(tipoCliente);
+                    request.getRequestDispatcher("Controlador?menu=TipoCliente&accion=Listar").forward(request, response);
+                    break;
+                case "Editar":
+                    codTipoCliente = Integer.parseInt(request.getParameter("codigoTipoCliente"));
+                    TipoCliente tipclien = tipoClienteDAO.listarCodigoTipoCliente(codTipoCliente);
+                    request.setAttribute("TipoCliente", tipclien);
+                    request.getRequestDispatcher("Controlador?menu=TipoCliente&accion=Listar").forward(request, response);
+                    break;
+                case"Actualizar":
+                    String dscrpTipClien = request.getParameter("txtDescripcionTipoCliente");
+                    tipoCliente.setDescripcion(dscrpTipClien);
+                    tipoCliente.setCodigoTipoCliente(codTipoCliente);
+                    tipoClienteDAO.actualizar(tipoCliente);
+                    request.getRequestDispatcher("Controlador?menu=TipoCliente&accion=Listar").forward(request, response);
+                    break;
+                case"Eliminar":
+                    codTipoCliente = Integer.parseInt(request.getParameter("codigoTipoCliente"));
+                    tipoClienteDAO.eliminar(codTipoCliente);
+                    request.getRequestDispatcher("Controlador?menu=TipoCliente&accion=Listar").forward(request, response);
                     break;
             }
             request.getRequestDispatcher("TipoCliente.jsp").forward(request, response);
