@@ -39,6 +39,7 @@ public class Controlador extends HttpServlet {
     int codSucursal;
     int idCliente;
     int codTipoCliente;
+    int codMetoPa;
 
     Clasificacion clasificacion = new Clasificacion();
     ClasificacionDAO clasificacionDAO = new ClasificacionDAO();
@@ -229,6 +230,30 @@ public class Controlador extends HttpServlet {
                 case "Listar":
                     List listaMetodoDePago = metodoDePagoDAO.listar();
                     request.setAttribute("metodoDePago", listaMetodoDePago);
+                    break;
+                case "Agregar":
+                    String descripcion = request.getParameter("txtDescripcion");
+                    metodoDePago.setDescripcion(descripcion);
+                    metodoDePagoDAO.agregar(metodoDePago);
+                    request.getRequestDispatcher("Controlador?menu=MetodoDePago&accion=Listar").forward(request, response);
+                    break;
+                case "Editar":
+                    codMetoPa = Integer.parseInt(request.getParameter("codigoMetodoPago"));
+                    MetodoDePago mdp = metodoDePagoDAO.listarCodigoMetodoPago(codMetoPa);
+                    request.setAttribute("MetodoDePago", mdp);/*La palabra que estaba adentro la tenia minuscula al principio despues la cambie a minuscula*/
+                    request.getRequestDispatcher("Controlador?menu=MetodoDePago&accion=Listar").forward(request, response);
+                    break;
+                case"Actualizar":
+                    String descripcionMePago = request.getParameter("txtDescripcion");
+                    metodoDePago.setDescripcion(descripcionMePago);
+                    metodoDePago.setCodigoMetodoPago(codMetoPa);
+                    metodoDePagoDAO.actualizar(metodoDePago);
+                    request.getRequestDispatcher("Controlador?menu=MetodoDePago&accion=Listar").forward(request, response);
+                    break;
+                case"Eliminar":
+                    codMetoPa = Integer.parseInt(request.getParameter("codigoMetodoPago"));
+                    metodoDePagoDAO.eliminar(codMetoPa);
+                    request.getRequestDispatcher("Controlador?menu=MetodoDePago&accion=Listar").forward(request, response);
                     break;
             }
             request.getRequestDispatcher("MetodoDePago.jsp").forward(request, response);
