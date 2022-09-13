@@ -85,7 +85,10 @@ Create table Habitacion(
 
 Create table Empleado(
 	acceso int not null,
+    dpiEmpleado varchar(13) not null,
     nombreEmpleado varchar(200) not null,
+    apellidoEmpleado varchar(200) not null,
+    correoEmpleado varchar(200) not null,
     telefono varchar(10) not null,
     usuario varchar(15) not null,
     codigotipoEmpleado int not null,
@@ -302,28 +305,28 @@ insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Lib
 -- Empleados (Programadores)
 /*---------------------------------------------------------------------------*/
 
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2018521','Carlos Ramos','39049278','Cramos','8');
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2021117','José Vasquez','394750289','Jvasquez','8');
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2018253','Ian Monterroso','30472894','Imonterroso','8');
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2018457','Juan Montenegro','39047294','Jmontenegro','8');
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2018384','Jose Ramirez','04738294','Jramirez','8');
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2018317','Juan Morales','32084719','Jmorales','8');
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2021131','Sergio Tan','63301784','Stan','8');
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2018481','Yohan Rodas','83022845','Yrodas','8');
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2020291','Jose Rayo','77301835','Jrayo','9');
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2021120','Edgar Reyes','10364881','Ereyes','8');
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2021586','Jose Peralta','03746189','Jperalta','8');
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2018044','Pablo Vasquez','58962456','Pvasquez','8');
+insert into Empleado (acceso, dpiEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2018521','1','Carlos ','Ramos','cramos-2018457@kinal.edu.gt','39049278','Cramos','8');
+insert into Empleado (acceso, dpiEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2021117','2','José','Vasquez','jvasquez-2021117@kinal.edu.gt','394750289','Jvasquez','8');
+insert into Empleado (acceso, dpiEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2018253','3','Ian','Monterroso','imonterroso-2018253@kinal.edu.gt','30472894','Imonterroso','8');
+insert into Empleado (acceso, dpiEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2018457','3024250040102','Juan','Montenegro','jmontenegro-2018457@kinal.edu.gt','39047294','Jmontenegro','8');
+insert into Empleado (acceso, dpiEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2018384','5','Jose','Ramirez','jramirez-2018384@kinal.edu.gt','04738294','Jramirez','8');
+insert into Empleado (acceso, dpiEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2018317','6','Juan','Morales','jmorales-2018317@kinal.edu.gt','32084719','Jmorales','8');
+insert into Empleado (acceso, dpiEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2021131','7','Sergio','Tan','stan-2021131@kinal.edu.gt','63301784','Stan','8');
+insert into Empleado (acceso, dpiEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2018481','8','Yohan','Rodas','yrodas-2018481@kinal.edu.gt','83022845','Yrodas','8');
+insert into Empleado (acceso, dpiEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2020291','9','Jose','Rayo','jrayo-2020291@kinal.edu.gt','77301835','Jrayo','9');
+insert into Empleado (acceso, dpiEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2021120','10','Edgar','Reyes','ereyes-2021120@kinal.edu.gt','10364881','Ereyes','8');
+insert into Empleado (acceso, dpiEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2021586','11','Jose','Peralta','jperalta-2021586@kinal.edu.gt','03746189','Jperalta','8');
+insert into Empleado (acceso, dpiEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2018044','12','Pablo','Vasquez','pvasquez-2018044@kinal.edu.gt','58962456','Pvasquez','8');
 
 /*---------------------------------------------------------------------------*/
 -- Empleados (Hoteles)
 /*---------------------------------------------------------------------------*/
 
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ('1001','Jose Alvarado','30471932','Jalvarado','1');
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2001','Pedro Lopez','36479801','Plopez','1');
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ('3001','Manuel Lainez','27485909','Mlainez','1');
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ('4001','Jacinto Quiñonez','14368702','JQuiñonez','1');
-insert into Empleado (acceso, nombreEmpleado, telefono, usuario, codigoTipoEmpleado) values ('5001','Juan Herrera','15647238','JHerrera','1');
+insert into Empleado (acceso, dpiEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefono, usuario, codigoTipoEmpleado) values ('1001','13','Jose','Alvarado','jalvarado-1001@kinal.edu.gt','30471932','Jalvarado','1');
+insert into Empleado (acceso, dpiEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefono, usuario, codigoTipoEmpleado) values ('2001','14','Pedro','Lopez','plopez-2001@kinal.edu.gt','36479801','Plopez','1');
+insert into Empleado (acceso, dpiEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefono, usuario, codigoTipoEmpleado) values ('3001','15','Manuel','Lainez','mlainez-3001@kinal.edu.gt','27485909','Mlainez','1');
+insert into Empleado (acceso, dpiEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefono, usuario, codigoTipoEmpleado) values ('4001','16','Jacinto','Quiñonez','jquiñonez-4001@kinal.edu.gt','14368702','JQuiñonez','1');
+insert into Empleado (acceso, dpiEmpleado, nombreEmpleado, apellidoEmpleado, correoEmpleado, telefono, usuario, codigoTipoEmpleado) values ('5001','17','Juan','Herrera','jherrera-5001@kinal.edu.gt','15647238','JHerrera','1');
 
 /*---------------------------------------------------------------------------*/
 -- Reservaciones
