@@ -22,27 +22,27 @@
                 <div class="card-body">
                     <form action='Controlador?menu=Reservacion' method="POST">
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtCodigo" class="form-control" id="floatingInputGroup1" placeholder="Codigo">
-                            <label for="floatingInputGroup1">Codigo</label>
-                        </div>
-                        <div class="form-floating mb-3"> 
-                            <input type="date" name="txtFechaEntrada" class="form-control" id="floatingInputGroup1" placeholder="Fecha de Entrada">
+                            <input type="text" name="txtFechaEntrada" value="${Reservacion.getFechaEntrada()}" class="form-control" id="floatingInputGroup1" placeholder="Fecha de Entrada">
                             <label for="floatingInputGroup1">Fecha de Entrada</label>
                         </div>
                         <div class="form-floating mb-3"> 
-                            <input type="date" name="txtFechaSalida" class="form-control" id="floatingInputGroup1" placeholder="Fecha de alida">
+                            <input type="text" name="txtFechaSalida" value="${Reservacion.getFechaSalida()}" class="form-control" id="floatingInputGroup1" placeholder="Fecha de Salida">
                             <label for="floatingInputGroup1">Fecha de Salida</label>
                         </div>
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtID" class="form-control" id="floatingInputGroup1" placeholder="Cliente">
+                            <input type="text" name="txtCostReservacion" value="${Reservacion.getCostReservacion()}" class="form-control" id="floatingInputGroup1" placeholder="Costo de Reservacion">
+                            <label for="floatingInputGroup1">Costo de Reservacion</label>
+                        </div>
+                        <div class="form-floating mb-3"> 
+                            <input type="text" name="txtID" value="${Reservacion.getID()}" class="form-control" id="floatingInputGroup1" placeholder="Cliente">
                             <label for="floatingInputGroup1">Cliente</label>
                         </div>
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtNumHabitacion" class="form-control" id="floatingInputGroup1" placeholder="Habitacion">
+                            <input type="text" name="txtNumHabitacion" value="${Reservacion.getNumHabitacion()}" class="form-control" id="floatingInputGroup1" placeholder="Habitacion">
                             <label for="floatingInputGroup1">Habitacion</label>
                         </div>
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtAcceso" class="form-control" id="floatingInputGroup1" placeholder="Acceso">
+                            <input type="text" name="txtAcceso" value="${Reservacion.getAcceso()}" class="form-control" id="floatingInputGroup1" placeholder="Acceso">
                             <label for="floatingInputGroup1">Acceso</label>
                         </div>
                         <input type='submit' name="accion" value="Agregar" class="btn btn-primary">
@@ -60,6 +60,7 @@
                             <th scope="col">CODIGO RESERVACION</th>
                             <th scope="col">ENTRADA</th>
                             <th scope="col">SALIDA</th>
+                            <th scope="col">COSTO RESERVACION</th>
                             <th scope="col">ID CLIENTE</th>
                             <th scope="col">HABITACION</th>
                             <th scope="col">ACCESO</th>
@@ -71,12 +72,13 @@
                             <th scope="row">${reservacion.getCodigoReservacion()}</th>
                             <td>${reservacion.getFechaEntrada()}</td>
                             <td>${reservacion.getFechaSalida()}</td>
+                            <td>${reservacion.getCostReservacion()}</td>
                             <td>${reservacion.getID()}</td>
                             <td>${reservacion.getNumHabitacion()}</td>
                             <td>${reservacion.getAcceso()}</td>
                             <td>
-                                <a class='btn btn-warning' href="">Editar</a>
-                                <a class='btn btn-danger' href="">Eliminar</a>
+                                <a class="btn btn-warning" href="Controlador?menu=Reservacion&accion=Editar&codigoReservacion=${reservacion.getCodigoReservacion()}">Editar</a>
+                                <a class="btn btn-danger " href="Controlador?menu=Reservacion&accion=Eliminar&codigoReservacion=${reservacion.getCodigoReservacion()}">Eliminar</a>
                             </td>
                             
                         </tr>

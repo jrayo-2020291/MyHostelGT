@@ -101,6 +101,7 @@ Create table Reservacion(
 	codigoReservacion int not null auto_increment,
     fechaEntrada varchar(10) not null,
     fechaSalida varchar(10) not null,
+    costReservacion double not null,
     ID int not null,
     numHabitacion int not null,
     acceso int not null,
@@ -332,40 +333,40 @@ insert into Empleado (acceso, dpiEmpleado, nombreEmpleado, apellidoEmpleado, cor
 -- Reservaciones
 /*---------------------------------------------------------------------------*/
 
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('5/9/2022','9/9/2022','1','1','1001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('6/9/2022','8/9/2022','2','3','1001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('9/9/2022','11/9/2022','3','4','1001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('11/9/2022','14/9/2022','4','5','1001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('14/9/2022','19/9/2022','5','8','1001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('17/9/2022','20/9/2022','6','9','2001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('23/9/2022','25/9/2022','7','10','2001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('26/9/2022','28/9/2022','8','11','2001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('29/9/2022','30/9/2022','9','12','2001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('3/10/2022','5/10/2022','10','13','2001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('5/10/2022','9/10/2022','11','14','3001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('6/10/2022','11/10/2022','12','16','3001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('11/10/2022','12/10/2022','13','17','3001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('13/10/2022','15/10/2022','14','18','3001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('14/10/2022','17/10/2022','15','19','3001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('18/10/2022','20/10/2022','16','20','4001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('22/10/2022','26/10/2022','17','22','4001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('23/10/2022','26/10/2022','18','23','4001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('24/10/2022','25/10/2022','19','24','4001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('30/10/2022','3/11/2022','20','25','4001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('1/11/2022','4/11/2022','21','26','5001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('1/11/2022','6/11/2022','22','30','5001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('4/11/2022','7/11/2022','23','31','5001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('5/11/2022','9/11/2022','24','32','5001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('7/11/2022','11/11/2022','25','34','5001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('9/11/2022','11/11/2022','26','36','1001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('11/11/2022','15/11/2022','27','37','2001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('13/11/2022','16/11/2022','28','38','3001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('14/11/2022','17/11/2022','29','39','4001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('17/11/2022','20/11/2022','30','40','5001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('17/11/2022','21/11/2022','31','43','1001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('18/11/2022','22/11/2022','32','44','2001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('19/11/2022','24/11/2022','33','48','3001');
-insert into Reservacion (fechaEntrada, fechaSalida, ID, numHabitacion, acceso) values ('21/11/2022','26/11/2022','34','49','4001');
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("5/9/2022","9/9/2022", 202.25,"1","1","1001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("6/9/2022","8/9/2022", 202.25,"2","3","1001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("9/9/2022","11/9/2022", 202.25, "3","4","1001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("11/9/2022","14/9/2022", 202.25, "4","5","1001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("14/9/2022","19/9/2022", 202.25, "5","8","1001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("17/9/2022","20/9/2022", 250.25, "6","9","2001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("23/9/2022","25/9/2022", 250.25, "7","10","2001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("26/9/2022","28/9/2022", 250.25, "8","11","2001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("29/9/2022","30/9/2022", 250.25, "9","12","2001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("3/10/2022","5/10/2022", 250.25, "10","13","2001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("5/10/2022","9/10/2022", 300.25, "11","14","3001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("6/10/2022","11/10/2022", 300.25, "12","16","3001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("11/10/2022","12/10/2022", 300.25, "13","17","3001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("13/10/2022","15/10/2022", 300.25, "14","18","3001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("14/10/2022","17/10/2022", 300.25, "15","19","3001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("18/10/2022","20/10/2022", 350.25, "16","20","4001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("22/10/2022","26/10/2022", 350.25, "17","22","4001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("23/10/2022","26/10/2022", 350.25, "18","23","4001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("24/10/2022","25/10/2022", 350.25, "19","24","4001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("30/10/2022","3/11/2022", 350.25, "20","25","4001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("1/11/2022","4/11/2022", 450.25, "21","26","5001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("1/11/2022","6/11/2022", 450.25, "22","30","5001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("4/11/2022","7/11/2022", 450.25, "23","31","5001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("5/11/2022","9/11/2022", 450.25, "24","32","5001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("7/11/2022","11/11/2022", 450.25, "25","34","5001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("9/11/2022","11/11/2022", 202.25, "26","36","1001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("11/11/2022","15/11/2022", 250.25, "27","37","2001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("13/11/2022","16/11/2022", 300.25, "28","38","3001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("14/11/2022","17/11/2022", 350.25, "29","39","4001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("17/11/2022","20/11/2022", 400.25, "30","40","5001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("17/11/2022","21/11/2022", 202.25, "31","43","1001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("18/11/2022","22/11/2022", 250.25, "32","44","2001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("19/11/2022","24/11/2022", 300.25, "33","48","3001");
+insert into Reservacion (fechaEntrada, fechaSalida, costReservacion, ID, numHabitacion, acceso) values ("21/11/2022","26/11/2022", 350.25, "34","49","4001");
 
 /*---------------------------------------------------------------------------*/
 -- SELECTS

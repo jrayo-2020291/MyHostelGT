@@ -4,6 +4,7 @@ public class Reservacion {
     private int codigoReservacion;
     private String fechaEntrada;
     private String fechaSalida;
+    private double costReservacion;
     private int ID;
     private int numHabitacion;
     private int acceso;
@@ -11,10 +12,11 @@ public class Reservacion {
     public Reservacion() {
     }
 
-    public Reservacion(int codigoReservacion, String fechaEntrada, String fechaSalida, int ID, int numHabitacion, int acceso) {
+    public Reservacion(int codigoReservacion, String fechaEntrada, String fechaSalida, double costReservacion, int ID, int numHabitacion, int acceso) {
         this.codigoReservacion = codigoReservacion;
         this.fechaEntrada = fechaEntrada;
         this.fechaSalida = fechaSalida;
+        this.costReservacion = costReservacion;
         this.ID = ID;
         this.numHabitacion = numHabitacion;
         this.acceso = acceso;
@@ -44,6 +46,14 @@ public class Reservacion {
         this.fechaSalida = fechaSalida;
     }
 
+    public double getCostReservacion() {
+        return costReservacion;
+    }
+
+    public void setCostReservacion(double costReservacion) {
+        this.costReservacion = costReservacion;
+    }
+
     public int getID() {
         return ID;
     }
@@ -67,8 +77,6 @@ public class Reservacion {
     public void setAcceso(int acceso) {
         this.acceso = acceso;
     }
-    
-    
-    
+
     
 }

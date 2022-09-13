@@ -41,6 +41,7 @@ public class Controlador extends HttpServlet {
     int codTipoCliente;
     int codE;
     int codMetoPa;
+    int codReservacion;
 
     Clasificacion clasificacion = new Clasificacion();
     ClasificacionDAO clasificacionDAO = new ClasificacionDAO();
@@ -372,6 +373,55 @@ public class Controlador extends HttpServlet {
                     List listaReservacion = reservacionDAO.listar();
                     request.setAttribute("reservacion", listaReservacion);
                     break;
+                    
+                    case "Agregar":
+                    String FeEntrada = request.getParameter("txtFechaEntrada");
+                    String FeSalida = request.getParameter("txtFechaSalida");
+                    double costReservacion =  Double.parseDouble(request.getParameter("txtCostReservacion"));
+                    int ID = Integer.parseInt(request.getParameter("txtID"));
+                    int numHabitacion = Integer.parseInt(request.getParameter("txtNumHabitacion"));
+                    int acceso = Integer.parseInt(request.getParameter("txtAcceso"));
+                    reservacion.setFechaEntrada(FeEntrada);
+                    reservacion.setFechaSalida(FeSalida);
+                    reservacion.setCostReservacion(costReservacion);
+                    reservacion.setID(ID);
+                    reservacion.setNumHabitacion(numHabitacion);
+                    reservacion.setAcceso(acceso);
+                    reservacionDAO.agregar(reservacion);
+                    request.getRequestDispatcher("Controlador?menu=Reservacion&accion=Listar").forward(request, response);
+                    break;
+                    
+                case "Editar":
+                    codReservacion = Integer.parseInt(request.getParameter("codigoReservacion"));
+                    Reservacion re = reservacionDAO.listarCodigoReservacion(codReservacion);
+                    request.setAttribute("Reservacion", re);
+                    request.getRequestDispatcher("Controlador?menu=Reservacion&accion=Listar").forward(request, response);
+                    break;
+                    
+                case "Actualizar":
+                    String FeEnt = request.getParameter("txtFechaEntrada");
+                    String FeSa = request.getParameter("txtFechaSalida");
+                    costReservacion =  Double.parseDouble(request.getParameter("txtCostReservacion"));
+                    ID = Integer.parseInt(request.getParameter("txtID"));
+                    numHabitacion = Integer.parseInt(request.getParameter("txtNumHabitacion"));
+                    acceso = Integer.parseInt(request.getParameter("txtAcceso"));
+                    reservacion.setFechaEntrada(FeEnt);
+                    reservacion.setFechaSalida(FeSa);
+                    reservacion.setCostReservacion(costReservacion);
+                    reservacion.setID(ID);
+                    reservacion.setNumHabitacion(numHabitacion);
+                    reservacion.setAcceso(acceso);
+                    reservacion.setCodigoReservacion(codReservacion);
+                    reservacionDAO.actualizar(reservacion);
+                    request.getRequestDispatcher("Controlador?menu=Reservacion&accion=Listar").forward(request, response);
+                    break;
+                    
+                case "Eliminar":
+                    codReservacion = Integer.parseInt(request.getParameter("codigoReservacion"));
+                    reservacionDAO.eliminar(codReservacion);
+                    request.getRequestDispatcher("Controlador?menu=Reservacion&accion=Listar").forward(request, response);
+                    break;
+                    
             }
             request.getRequestDispatcher("Reservacion.jsp").forward(request, response);
         }else if(menu.equals("TipoCliente")){
