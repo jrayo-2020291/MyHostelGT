@@ -43,6 +43,7 @@ public class Controlador extends HttpServlet {
     int codMetoPa;
     int codReservacion;
     int codTipoEmpleado;
+    int nHabitacion;
 
     Clasificacion clasificacion = new Clasificacion();
     ClasificacionDAO clasificacionDAO = new ClasificacionDAO();
@@ -253,6 +254,45 @@ public class Controlador extends HttpServlet {
                 case "Listar":
                     List listaHabitacion = habitacionDAO.listar();
                     request.setAttribute("habitacion", listaHabitacion);
+                    break;
+                case "Agregar":
+                    String est = request.getParameter("txtEstado");
+                    double saldoPagar = Double.parseDouble(request.getParameter("txtSaldoAPagar"));
+                    int codiClasificacion = Integer.parseInt(request.getParameter("txtCodigoClasificacion"));
+                    int codiSucursal = Integer.parseInt(request.getParameter("txtCodigoSucursal"));
+                    habitacion.setEstado(est);
+                    habitacion.setSaldoAPagar(saldoPagar);
+                    habitacion.setCodigoClasificacion(codiClasificacion);
+                    habitacion.setCodigoSucursal(codiSucursal);
+                    habitacionDAO.agregar(habitacion);
+                    request.getRequestDispatcher("Controlador?menu=Habitacion&accion=Listar").forward(request, response);
+                    break;
+
+                case "Editar":
+                    nHabitacion = Integer.parseInt(request.getParameter("numHabitacion"));
+                    Habitacion hb = habitacionDAO.listarCodigoHabitacion(nHabitacion);
+                    request.setAttribute("Habitacion", hb);
+                    request.getRequestDispatcher("Controlador?menu=Habitacion&accion=Listar").forward(request, response);
+                    break;
+                    
+                case "Actualizar":
+                    est = request.getParameter("txtEstado");
+                    saldoPagar = Double.parseDouble(request.getParameter("txtSaldoAPagar"));
+                    codiClasificacion = Integer.parseInt(request.getParameter("txtCodigoClasificacion"));
+                    codiSucursal = Integer.parseInt(request.getParameter("txtCodigoSucursal"));
+                    habitacion.setEstado(est);
+                    habitacion.setSaldoAPagar(saldoPagar);
+                    habitacion.setCodigoClasificacion(codiClasificacion);
+                    habitacion.setCodigoSucursal(codiSucursal);
+                    habitacion.setNumHabitacion(nHabitacion);
+                    habitacionDAO.actualizar(habitacion);
+                    request.getRequestDispatcher("Controlador?menu=Habitacion&accion=Listar").forward(request, response);
+                    break;
+                    
+                case "Eliminar":
+                    nHabitacion = Integer.parseInt(request.getParameter("numHabitacion"));
+                    habitacionDAO.eliminar(nHabitacion);
+                    request.getRequestDispatcher("Controlador?menu=Habitacion&accion=Listar").forward(request, response);
                     break;
             }
             request.getRequestDispatcher("Habitacion.jsp").forward(request, response);

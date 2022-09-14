@@ -20,25 +20,25 @@
         <div class="d-flex">
             <div class="card col-sm-4">
                 <div class="card-body">
-                    <form action="Controlador?menu=Cliente" method="POST">
+                    <form action="Controlador?menu=Habitacion" method="POST">
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtCodigo" class="form-control" id="floatingInputGroup1" placeholder="Codigo">
-                            <label for="floatingInputGroup1">Codigo</label>
-                        </div>
-                        <div class="form-floating mb-3"> 
-                            <input type="text" name="txtEstado" class="form-control" id="floatingInputGroup1" placeholder="Estado">
+                            <input type="text" name="txtEstado" value="${Habitacion.getEstado()}" class="form-control" id="floatingInputGroup1" placeholder="Estado">
                             <label for="floatingInputGroup1">Estado</label>
                         </div>
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtCClasificacion" class="form-control" id="floatingInputGroup1" placeholder="Clasificacion">
+                            <input type="text" name="txtSaldoAPagar" value="${Habitacion.getSaldoAPagar()}" class="form-control" id="floatingInputGroup1" placeholder="Costo">
+                            <label for="floatingInputGroup1">Costo</label>
+                        </div>
+                        <div class="form-floating mb-3"> 
+                            <input type="text" name="txtCodigoClasificacion" value="${Habitacion.getCodigoClasificacion()}" class="form-control" id="floatingInputGroup1" placeholder="Clasificacion">
                             <label for="floatingInputGroup1">Clasificacion</label>
                         </div>
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtHotel" class="form-control" id="floatingInputGroup1" placeholder="Hotel">
-                            <label for="floatingInputGroup1">Hotel</label>
+                            <input type="text" name="txtCodigoSucursal" value="${Habitacion.getCodigoSucursal()}" class="form-control" id="floatingInputGroup1" placeholder="Sucursal">
+                            <label for="floatingInputGroup1">Sucursal</label>
                         </div>
-                        <input type="submit" name="action" value="Agregar" class="btn btn-primary">
-                        <input type="submit" name="action" value="Actualizar" class="btn btn-success">
+                        <input type="submit" name="accion" value="Agregar" class="btn btn-primary">
+                        <input type="submit" name="accion" value="Actualizar" class="btn btn-success">
                     </form>
                 </div>
             </div>
@@ -50,8 +50,9 @@
                         <tr>
                             <th scope="col">Codigo</th>
                             <th scope="col">Estado</th>
+                            <th scope="col">Costo</th>
                             <th scope="col">Codigo de Clasificacion</th>
-                            <th scope="col">Codigo de Hotel</th>
+                            <th scope="col">Codigo de Sucursal</th>
                             <th scope="col">Opciones</th>
                         </tr>
                     </thead>
@@ -60,11 +61,12 @@
                             <tr>
                                 <th scope="row">${habitacion.getNumHabitacion()}</th>
                                 <td>${habitacion.getEstado()}</td>
+                                <td>${habitacion.getSaldoAPagar()}</td>
                                 <td>${habitacion.getCodigoClasificacion()}</td>
-                                <td>${habitacion.getCodigoHotel()}</td>
+                                <td>${habitacion.getCodigoSucursal()}</td>
                                 <td>
-                                    <a class="btn btn-warning" href="">Editar</a>
-                                    <a class="btn btn-danger" href="">Eliminar</a>
+                                <a class="btn btn-warning" href="Controlador?menu=Habitacion&accion=Editar&numHabitacion=${habitacion.getNumHabitacion()}">Editar</a>
+                                <a class="btn btn-danger " href="Controlador?menu=Habitacion&accion=Eliminar&numHabitacion=${habitacion.getNumHabitacion()}">Eliminar</a>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -78,3 +80,4 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>        
     </body>
 </html>
+

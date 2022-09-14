@@ -73,12 +73,13 @@ Create table Cliente(
 Create table Habitacion(
 	numHabitacion int not null auto_increment,
     estado varchar(20) not null,
+    saldoAPagar double not null,
     codigoClasificacion int not null,
     codigoSucursal int not null,
 	primary key PK_numHabitacion (numHabitacion),
     constraint FK_Habitacion_Clasificacion foreign key (codigoClasificacion)
 		references Clasificacion(codigoClasificacion),
-	constraint FK_Habitacion_Hotel foreign key (codigoSucursal)
+	constraint FK_Habitacion_Sucursal foreign key (codigoSucursal)
 		references Sucursal(codigoSucursal)
 );
 
@@ -251,56 +252,56 @@ insert into Cliente (nombreCliente, apellidoCliente, telefono, DPI, direccion, c
 -- Habitaciones
 /*---------------------------------------------------------------------------*/
 
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','1','1');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Libre','2','1');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','2','1');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','3','1');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','1','1');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Libre','1','2');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Libre','2','2');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','1','2');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','3','2');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','4','2');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','5','3');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','3','3');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','2','3');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','6','3');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Libre','3','3');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','1','4');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','1','4');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','2','4');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','3','4');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','3','4');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Libre','2','5');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','2','5');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','1','5');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','1','5');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','4','5');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','5','6');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Libre','5','6');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Libre','3','6');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Mantenimiento','2','6');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','3','6');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','2','7');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','2','7');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Mantenimiento','2','7');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','3','7');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Mantenimiento','5','7');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','6','8');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','1','8');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','3','8');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','2','8');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','3','8');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Mantenimiento','5','9');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Libre','1','9');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','5','9');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','1','9');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Mantenimiento','2','9');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Libre','2','10');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Libre','2','10');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','3','10');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Ocupada','3','10');
-insert into Habitacion (estado, codigoClasificacion, codigoSucursal) values('Libre','1','10');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',300, '1','1');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Libre',200, '2','1');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',150, '2','1');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',250, '3','1');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',200, '1','1');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Libre',100, '1','2');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Libre',150,'2','2');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',150,'1','2');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',100,'3','2');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',250,'4','2');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',150,'5','3');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',250,'3','3');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',350,'2','3');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',200,'6','3');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Libre',150,'3','3');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',300,'1','4');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',100,'1','4');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',150,'2','4');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',300,'3','4');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',350,'3','4');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Libre',100,'2','5');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',200,'2','5');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',200,'1','5');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',300,'1','5');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',240,'4','5');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',210,'5','6');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Libre',320,'5','6');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Libre',260,'3','6');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Mantenimiento',290,'2','6');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',340,'3','6');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',190,'2','7');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',199.99,'2','7');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Mantenimiento',299.99,'2','7');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',150.99,'3','7');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Mantenimiento',180,'5','7');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',210,'6','8');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',240,'1','8');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',280,'3','8');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',170,'2','8');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',150,'3','8');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Mantenimiento',300,'5','9');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Libre',150,'1','9');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',150,'5','9');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',200,'1','9');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Mantenimiento',200,'2','9');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Libre',150,'2','10');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Libre',150,'2','10');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',300,'3','10');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Ocupada',300,'3','10');
+insert into Habitacion (estado, saldoAPagar, codigoClasificacion, codigoSucursal) values('Libre',300,'1','10');
 
 /*---------------------------------------------------------------------------*/
 -- Empleados (Programadores)

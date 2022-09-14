@@ -3,17 +3,19 @@ package modelo;
 public class Habitacion {
     private int numHabitacion;
     private String estado;
+    private double saldoAPagar;
     private int codigoClasificacion;
-    private int codigoHotel;
+    private int codigoSucursal;
 
     public Habitacion() {
     }
 
-    public Habitacion(int numHabitacion, String estado, int codigoClasificacion, int codigoHotel) {
+    public Habitacion(int numHabitacion, String estado, double saldoAPagar, int codigoClasificacion, int codigoSucursal) {
         this.numHabitacion = numHabitacion;
         this.estado = estado;
+        this.saldoAPagar = saldoAPagar;
         this.codigoClasificacion = codigoClasificacion;
-        this.codigoHotel = codigoHotel;
+        this.codigoSucursal = codigoSucursal;
     }
 
     public int getNumHabitacion() {
@@ -32,6 +34,14 @@ public class Habitacion {
         this.estado = estado;
     }
 
+    public double getSaldoAPagar() {
+        return saldoAPagar;
+    }
+
+    public void setSaldoAPagar(double saldoAPagar) {
+        this.saldoAPagar = saldoAPagar;
+    }
+
     public int getCodigoClasificacion() {
         return codigoClasificacion;
     }
@@ -40,13 +50,13 @@ public class Habitacion {
         this.codigoClasificacion = codigoClasificacion;
     }
 
-    public int getCodigoHotel() {
-        return codigoHotel;
+    public int getCodigoSucursal() {
+        return codigoSucursal;
     }
 
-    public void setCodigoHotel(int codigoHotel) {
-        this.codigoHotel = codigoHotel;
+    public void setCodigoSucursal(int codigoSucursal) {
+        this.codigoSucursal = codigoSucursal;
     }
-    
+
     
 }
