@@ -35,7 +35,7 @@
                     <caption>Lista de Tipos de Empleado</caption>
                     <thead>
                         <tr>
-                            <th scope="col">CODIGO</th>
+                            <th scope="col">Codigo</th>
                             <th scope="col">Descripcion</th>
                         </tr>
                     </thead>
