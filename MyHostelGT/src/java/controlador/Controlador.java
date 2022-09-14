@@ -413,8 +413,13 @@ public class Controlador extends HttpServlet {
                 case "Listar":
                     List listaReservacion = reservacionDAO.listar();
                     request.setAttribute("reservacion", listaReservacion);
+                    List listaCliente = clienteDAO.listar();
+                    request.setAttribute("clientes", listaCliente);
+                    List listaEmpleado = empleadoDAO.listar();
+                    request.setAttribute("empleados", listaEmpleado);
+                    List listaHabitacion = habitacionDAO.listar();
+                    request.setAttribute("habitacion", listaHabitacion);
                     break;
-                    
                     case "Agregar":
                     String FeEntrada = request.getParameter("txtFechaEntrada");
                     String FeSalida = request.getParameter("txtFechaSalida");

@@ -34,15 +34,31 @@
                             <label for="floatingInputGroup1">Costo de Reservacion</label>
                         </div>
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtID" value="${Reservacion.getID()}" class="form-control" id="floatingInputGroup1" placeholder="Cliente">
+                            <!--<input type="text" name="txtID" value="${Reservacion.getID()}" class="form-control" id="floatingInputGroup1" placeholder="Cliente">-->
+                            <select class="form-control" data-val="true" name="txtID" value="${Reservacion.getID()}">
+                                <c:forEach var="cliente" items="${clientes}">
+                                    <option name="txtID" value="${String.valueOf(cliente.getID())}" >${String.valueOf(cliente.getID())} ${cliente.getNombreCliente()} ${cliente.getApellidoCliente()}</option>
+                                </c:forEach>
+        
+                            </select>
                             <label for="floatingInputGroup1">Cliente</label>
                         </div>
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtNumHabitacion" value="${Reservacion.getNumHabitacion()}" class="form-control" id="floatingInputGroup1" placeholder="Habitacion">
+                           <!--<input type="text" name="txtNumHabitacion" value="${Reservacion.getNumHabitacion()}" class="form-control" id="floatingInputGroup1" placeholder="Habitacion">-->
+                            <select class="form-control" data-val="true" name="txtNumHabitacion" value="${Reservacion.getNumHabitacion()}">
+                                <c:forEach var="habitacion" items="${habitacion}">
+                                    <option name="txtNumHabitacion" value="${String.valueOf(habitacion.getNumHabitacion())}">${String.valueOf(habitacion.getNumHabitacion())}</option>
+                                </c:forEach>
+                            </select>
                             <label for="floatingInputGroup1">Habitacion</label>
                         </div>
                         <div class="form-floating mb-3"> 
-                            <input type="text" name="txtAcceso" value="${Reservacion.getAcceso()}" class="form-control" id="floatingInputGroup1" placeholder="Acceso">
+                            <!--<input type="text" name="txtAcceso" value="${Reservacion.getAcceso()}" class="form-control" id="floatingInputGroup1" placeholder="Acceso">-->
+                            <select class="form-control" data-val="true" name="txtAcceso" value="${Reservacion.getAcceso()}">
+                                <c:forEach var="empleado" items="${empleados}">
+                                    <option name="txtAcceso" value="${String.valueOf(empleado.getAcceso())}">${String.valueOf(empleado.getAcceso())}</option>
+                                </c:forEach>
+                            </select>
                             <label for="floatingInputGroup1">Acceso</label>
                         </div>
                         <input type='submit' name="accion" value="Agregar" class="btn btn-primary">
